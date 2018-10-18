@@ -17,16 +17,19 @@
 <li><a href="#listing-all-persons-code-list-code-code-l-code">3.2. Listing all persons : <code>list</code> (<code>l</code>)</a></li>
 <li><a href="#editing-a-person-code-edit-code-code-e-code">3.3. Editing a person : <code>edit</code> (<code>e</code>)</a></li>
 <li><a href="#locating-persons-by-name-code-find-code-code-f-code">3.4. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
-<li><a href="#selecting-a-person-code-select-code-code-s-code">3.5. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
-<li><a href="#listing-entered-commands-code-history-code-code-g-code">3.6. Listing entered commands : <code>history</code> (<code>g</code>)</a></li>
-<li><a href="#undoing-previous-command-code-undo-code-code-u-code">3.7. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code-code-r-code">3.8. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
-<li><a href="#clearing-all-entries-code-clear-code-code-c-code">3.9. Clearing all entries : <code>clear</code> (<code>c</code>)</a></li>
-<li><a href="#import-timetable-from-a-file-code-import-code-code-i-code">3.10. Import Timetable from a file : <code>import</code> (<code>i</code>)</a></li>
-<li><a href="#export-timetable-to-a-file-code-export-code-code-e-code">3.11. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></li>
-<li><a href="#exiting-the-program-code-exit-code-code-x-code">3.12. Exiting the program : <code>exit</code> (<code>x</code>)</a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code">3.5. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></li>
+<li><a href="#delete-a-timeslot-from-your-timetable-code-deletetime-code-code-dt-code">3.6. Delete a timeslot from your timetable: <code>deletetime</code> (<code>dt</code>)</a></li>
+<li><a href="#show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3">3.7. Show free slots among selected people <code>free</code> (<code>f</code>) (coming to you in v1.3!)</a></li>
+<li><a href="#selecting-a-person-code-select-code-code-s-code">3.8. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
+<li><a href="#listing-entered-commands-code-history-code-code-g-code">3.9. Listing entered commands : <code>history</code> (<code>g</code>)</a></li>
+<li><a href="#undoing-previous-command-code-undo-code-code-u-code">3.10. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code-code-r-code">3.11. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
+<li><a href="#clearing-all-entries-code-clear-code-code-c-code">3.12. Clearing all entries : <code>clear</code> (<code>c</code>)</a></li>
+<li><a href="#import-timetable-from-a-file-code-import-code-code-i-code">3.13. Import Timetable from a file : <code>import</code> (<code>i</code>)</a></li>
+<li><a href="#export-timetable-to-a-file-code-export-code-code-e-code">3.14. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></li>
+<li><a href="#exiting-the-program-code-exit-code-code-x-code">3.15. Exiting the program : <code>exit</code> (<code>x</code>)</a></li>
+<li><a href="#saving-the-data">3.16. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.17. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#security-feature">4. Security Feature</a></li>
@@ -229,7 +232,109 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code-code-s-code"><a class="link" href="#selecting-a-person-code-select-code-code-s-code">3.5. Selecting a person : <code>select</code> (<code>s</code>)</a></h3>
+<h3 id="add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code"><a class="link" href="#add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code">3.5. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></h3>
+<div class="paragraph">
+<p>Adds a filled timeslot to your timetable.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addtime Monday 10:00-12:00</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of Monday.</p>
+</li>
+<li>
+<p>If you type <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
+</li>
+<li>
+<p>You cannot add a timeslot that clashes with your timetable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addtime Monday 10:00-12:00</code><br>
+Adds the timeslot from 10:00 to 12:00 on Monday to your timetable.</p>
+</li>
+<li>
+<p><code>addtime Fri 13:00-14:00</code><br>
+Adds the timeslot from 13:00 to 14:00 on Friday to your timetable.</p>
+</li>
+<li>
+<p><code>addtime Wed 17-18</code><br>
+Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After adding a timeslot, you should see the following:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="600"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-a-timeslot-from-your-timetable-code-deletetime-code-code-dt-code"><a class="link" href="#delete-a-timeslot-from-your-timetable-code-deletetime-code-code-dt-code">3.6. Delete a timeslot from your timetable: <code>deletetime</code> (<code>dt</code>)</a></h3>
+<div class="paragraph">
+<p>Delete a timeslot from your timetable.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deletetime Monday 10:00-12:00</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of Monday.</p>
+</li>
+<li>
+<p>If you type <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
+</li>
+<li>
+<p>You cannot add a timeslot that is not filled in your timetable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deletetime Monday 10:00-12:00</code><br>
+Deletes the timeslot from 10:00 to 12:00 on Monday from your timetable.</p>
+</li>
+<li>
+<p><code>addtime Fri 13:00-14:00</code><br>
+Deletes the timeslot from 13:00 to 14:00 on Friday from your timetable.</p>
+</li>
+<li>
+<p><code>addtime Wed 17-18</code><br>
+Deletes the timeslot from 17:00 to 18:00 on Wednesday from your timetable.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3"><a class="link" href="#show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3">3.7. Show free slots among selected people <code>free</code> (<code>f</code>) (coming to you in v1.3!)</a></h3>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-person-code-select-code-code-s-code"><a class="link" href="#selecting-a-person-code-select-code-code-s-code">3.8. Selecting a person : <code>select</code> (<code>s</code>)</a></h3>
 <div class="paragraph">
 <p>Selects the person identified by the index number used in the displayed person list.<br>
 Format: <code>select INDEX</code></p>
@@ -239,7 +344,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Selects the person and displays the person&#8217;s timetable at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the displayed person list.</p>
@@ -270,7 +375,7 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code-code-g-code"><a class="link" href="#listing-entered-commands-code-history-code-code-g-code">3.6. Listing entered commands : <code>history</code> (<code>g</code>)</a></h3>
+<h3 id="listing-entered-commands-code-history-code-code-g-code"><a class="link" href="#listing-entered-commands-code-history-code-code-g-code">3.9. Listing entered commands : <code>history</code> (<code>g</code>)</a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -291,7 +396,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code-code-u-code"><a class="link" href="#undoing-previous-command-code-undo-code-code-u-code">3.7. Undoing previous command : <code>undo</code> (<code>u</code>)</a></h3>
+<h3 id="undoing-previous-command-code-undo-code-code-u-code"><a class="link" href="#undoing-previous-command-code-undo-code-code-u-code">3.10. Undoing previous command : <code>undo</code> (<code>u</code>)</a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -336,7 +441,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code-code-r-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code-code-r-code">3.8. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code-code-r-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code-code-r-code">3.11. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -368,14 +473,14 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code-code-c-code"><a class="link" href="#clearing-all-entries-code-clear-code-code-c-code">3.9. Clearing all entries : <code>clear</code> (<code>c</code>)</a></h3>
+<h3 id="clearing-all-entries-code-clear-code-code-c-code"><a class="link" href="#clearing-all-entries-code-clear-code-code-c-code">3.12. Clearing all entries : <code>clear</code> (<code>c</code>)</a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-timetable-from-a-file-code-import-code-code-i-code"><a class="link" href="#import-timetable-from-a-file-code-import-code-code-i-code">3.10. Import Timetable from a file : <code>import</code> (<code>i</code>)</a></h3>
+<h3 id="import-timetable-from-a-file-code-import-code-code-i-code"><a class="link" href="#import-timetable-from-a-file-code-import-code-code-i-code">3.13. Import Timetable from a file : <code>import</code> (<code>i</code>)</a></h3>
 <div class="paragraph">
 <p>Imports a timetable from file. Currently only support (.ics) files exported from NUSMODS.<br></p>
 </div>
@@ -412,7 +517,7 @@ You can import your NUSMODS timetable as a .ics file, as shown in the picture be
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-timetable-to-a-file-code-export-code-code-e-code"><a class="link" href="#export-timetable-to-a-file-code-export-code-code-e-code">3.11. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></h3>
+<h3 id="export-timetable-to-a-file-code-export-code-code-e-code"><a class="link" href="#export-timetable-to-a-file-code-export-code-code-e-code">3.14. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></h3>
 <div class="paragraph">
 <p>Imports a timetable to .ics file.<br></p>
 </div>
@@ -432,21 +537,21 @@ You can import your NUSMODS timetable as a .ics file, as shown in the picture be
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code-code-x-code"><a class="link" href="#exiting-the-program-code-exit-code-code-x-code">3.12. Exiting the program : <code>exit</code> (<code>x</code>)</a></h3>
+<h3 id="exiting-the-program-code-exit-code-code-x-code"><a class="link" href="#exiting-the-program-code-exit-code-code-x-code">3.15. Exiting the program : <code>exit</code> (<code>x</code>)</a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.16. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.17. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -527,9 +632,17 @@ e.g.<code>select 2</code></p>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
 <li>
+<p><strong>Add timeslot</strong> : <code>addtime</code><br>
+e.g. <code>addtime mon 10-12</code></p>
+</li>
+<li>
+<p><strong>Delete timeslot</strong> : <code>deletetime</code><br>
+e.g. <code>deletetime tue 12-14</code></p>
+</li>
+<li>
 <p><strong>Import Timetable from a file</strong> : <code>import INDEX file/FILE_LOCATION</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 07:04:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 05:48:27 UTC</div></div></div></body></html>

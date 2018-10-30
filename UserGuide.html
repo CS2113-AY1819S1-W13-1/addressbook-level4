@@ -632,10 +632,11 @@ Format: <code>clear</code></p>
 <div class="sect2">
 <h3 id="import-timetable-from-a-file-code-import-code-code-i-code"><a class="link" href="#import-timetable-from-a-file-code-import-code-code-i-code">3.14. Import Timetable from a file : <code>import</code> (<code>i</code>)</a></h3>
 <div class="paragraph">
-<p>Imports a timetable from file. Currently only support (.ics) files exported from NUSMODS.<br></p>
+<p>Imports a timetable from file for the current user. If the location is not specified, the default location will be used (<code>.\import_export\import.ics</code>)<br>
+Currently only supports (.ics) files exported from NUSMODS.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>import INDEX file/FILE_LOCATION</code></p>
+<p>Format: <code>import [FILE_LOCATION]</code><br></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -643,8 +644,12 @@ Format: <code>clear</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>To import the timetable <code>nusmods_calendar.ics</code> for the person at index <code>1</code>:<br>
-<code>import 1 file/C:\Users\happycat96\Downloads\nusmods_calendar.ics</code><br></p>
+<p>To import the timetable at <code>C:\import_export\import.ics</code>:<br>
+<code>import C:\import_export\import.ics</code><br></p>
+</li>
+<li>
+<p>To import the timetable at the default location <code>.\import_export\import.ics</code>:<br>
+<code>import</code><br></p>
 </li>
 </ul>
 </div>
@@ -669,10 +674,10 @@ You can import your NUSMODS timetable as a .ics file, as shown in the picture be
 <div class="sect2">
 <h3 id="export-timetable-to-a-file-code-export-code-code-e-code"><a class="link" href="#export-timetable-to-a-file-code-export-code-code-e-code">3.15. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></h3>
 <div class="paragraph">
-<p>Imports a timetable to .ics file.<br></p>
+<p>Exports the currently-displayed timetable to the specified .ics file. If the location is not specified, the default location will be used (<code>.\import_export\export.ics</code>)<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>export INDEX file/FILE_LOCATION</code></p>
+<p>Format: <code>export [FILE_LOCATION]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -680,8 +685,12 @@ You can import your NUSMODS timetable as a .ics file, as shown in the picture be
 <div class="ulist">
 <ul>
 <li>
-<p>To export the timetable for the person at index <code>1</code> to the file <code>export.ics</code>:<br>
-<code>export 1 file/C:\Users\happycat96\Downloads\export.ics</code><br></p>
+<p>To export the currently displayed timetable to the location <code>C:\import_export\export.ics</code>:<br>
+<code>export C:\import_export\export.ics</code><br></p>
+</li>
+<li>
+<p>To export the currently displayed timetable to the default location <code>.\import_export\export.ics</code>:<br>
+<code>export C:\import_export\export.ics</code><br></p>
 </li>
 </ul>
 </div>
@@ -769,9 +778,12 @@ e.g. <code>addtime mon 10-12</code></p>
 e.g. <code>deletetime tue 12-14</code></p>
 </li>
 <li>
-<p><strong>Import Timetable from a file</strong> : <code>import INDEX file/FILE_LOCATION</code></p>
+<p><strong>Import Timetable from a file</strong> : <code>import [FILE_LOCATION]</code></p>
+</li>
+<li>
+<p><strong>Export Timetable to a file</strong> : <code>export [FILE_LOCATION]</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:25:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 14:42:25 UTC</div></div></div></body></html>

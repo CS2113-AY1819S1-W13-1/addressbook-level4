@@ -32,7 +32,7 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
 <li><a href="#timetable-feature">3.2. Timetable feature</a></li>
-<li><a href="#import-timetable-feature">3.3. Import timetable feature</a></li>
+<li><a href="#import-timetable-and-export-timetable-feature">3.3. Import timetable and Export timetable feature</a></li>
 <li><a href="#security-implementation">3.4. Security Implementation</a></li>
 <li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
 <li><a href="#logging">3.6. Logging</a></li>
@@ -610,12 +610,6 @@ the application to do user-specific tasks.</p>
 <li>
 <p>can save the Address Book data in xml format and read it back.</p>
 </li>
-<li>
-<p>can save the <code>TimeTable</code> Objects in ics format and read it back.</p>
-</li>
-<li>
-<p>can read <code>TimeTable</code> data from a user-specified file in ics format.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -951,7 +945,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-timetable-feature"><a class="link" href="#import-timetable-feature">3.3. Import timetable feature</a></h3>
+<h3 id="import-timetable-and-export-timetable-feature"><a class="link" href="#import-timetable-and-export-timetable-feature">3.3. Import timetable and Export timetable feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current implementation</a></h4>
 <div class="paragraph">
@@ -980,10 +974,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>&#160;</p>
 </div>
 <div class="paragraph">
-<p>The <code>IcsUtil</code> class implements three key utility methods for handling .ics files:<br>
-1. <code>IcsUtil#getTimeTableFromFile()</code> - to obtain a <code>TimeTable</code>; accepts the <code>filePath</code> of the .ics file as parameter<br>
-2.<br>
-3.<br></p>
+<p>The <code>IcsUtil</code> class implements two key utility methods for handling .ics files:<br>
+1. <code>IcsUtil#readTimeTableFromFile()</code> - to read an <code>Optional&lt;TimeTable&gt;</code> from an .ics file; accepts the <code>filePath</code> of the .ics file as parameter<br>
+2. <code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the .ics file as parameter<br></p>
 </div>
 </div>
 <div class="sect4">
@@ -1017,10 +1010,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Better follows Single Responsibility Principle: classes that concerns storage are in the storage subsystem.</p>
+<p>Pros: Classes that have to do with IO are in the storage subsystem.</p>
 </li>
 <li>
-<p>Cons: Current implementation favors 'permanent' files on the hard disk: Compared to the 'preferences.json' and 'AddressBook.xml' files, the .ics timetable file is single-use, and can have varying filePaths specified by user.</p>
+<p>Cons: Current implementation favors 'permanent' file storage, not on-demand IO (as in the import and export command).</p>
 </li>
 </ul>
 </div>
@@ -1940,4 +1933,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:25:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 14:42:25 UTC</div></div></div></body></html>

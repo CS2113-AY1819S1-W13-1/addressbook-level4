@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Timetable Deconflicter (TBC) - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>FreeTime - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>Timetable Deconflicter (TBC) - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>FreeTime - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W13-1</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
@@ -20,8 +20,8 @@
 <li><a href="#locating-persons-by-name-code-find-code-code-f-code">3.5. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
 <li><a href="#add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code">3.6. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></li>
 <li><a href="#delete-a-timeslot-from-your-timetable-code-deletetime-code-code-dt-code">3.7. Delete a timeslot from your timetable: <code>deletetime</code> (<code>dt</code>)</a></li>
-<li><a href="#show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3">3.8. Show free slots among selected people <code>free</code> (<code>f</code>) (coming to you in v1.3!)</a></li>
-<li><a href="#selecting-a-person-code-select-code-code-s-code">3.9. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
+<li><a href="#selecting-a-person-code-select-code-code-s-code">3.8. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
+<li><a href="#show-free-slots-among-selected-people-code-free-code">3.9. Show free slots among selected people <code>free</code></a></li>
 <li><a href="#listing-entered-commands-code-history-code-code-g-code">3.10. Listing entered commands : <code>history</code> (<code>g</code>)</a></li>
 <li><a href="#undoing-previous-command-code-undo-code-code-u-code">3.11. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
 <li><a href="#redoing-the-previously-undone-command-code-redo-code-code-r-code">3.12. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
@@ -30,7 +30,6 @@
 <li><a href="#export-timetable-to-a-file-code-export-code-code-e-code">3.15. Export Timetable to a file : <code>export</code> (<code>e</code>)</a></li>
 <li><a href="#exiting-the-program-code-exit-code-code-x-code">3.16. Exiting the program : <code>exit</code> (<code>x</code>)</a></li>
 <li><a href="#saving-the-data">3.17. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.18. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -42,7 +41,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Timetable Deconflicter (TBC) is a desktop app that allows you to <strong>find free timeslots to meet team members for projects</strong>. More specifically, it helps you identify the times during which everyone you want to meet is free. Timetable Deconflicter is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>FreeTime is a desktop app that allows you to <strong>find free timeslots to meet team members for projects</strong>. More specifically, it helps you identify the times during which everyone you want to meet is free. Timetable Deconflicter is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -384,7 +383,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <div class="sect2">
 <h3 id="add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code"><a class="link" href="#add-a-timeslot-to-your-timetable-code-addtime-code-code-at-code">3.6. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></h3>
 <div class="paragraph">
-<p>Adds a filled timeslot to your timetable.</p>
+<p>Adds a timeslot to your timetable.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>addtime Monday 10:00-12:00</code></p>
@@ -394,10 +393,10 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <div class="ulist">
 <ul>
 <li>
-<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of Monday.</p>
+<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of <code>Monday</code>.</p>
 </li>
 <li>
-<p>If you type <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
+<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
 </li>
 <li>
 <p>You cannot add a timeslot that clashes with your timetable.</p>
@@ -405,6 +404,19 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently, FreeTime only accepts timeslots that start and end exactly on the hour, which means that you cannot add timeslots that begin, say, at 10:30.<br>
+Stay tuned for this extension in v1.4!
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -428,8 +440,24 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 <div class="paragraph">
 <p>After adding a timeslot, you should see the following:</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="600"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="600">
+</div>
+<div class="title">Figure 5. Timeslot added to your timetable</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently, FreeTime only displays timeslots between 10:00 and 19:00.<br>
+Stay tuned for timetables that resize automatically in v1.4!
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -445,13 +473,13 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of Monday.</p>
+<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of <code>Monday</code>.</p>
 </li>
 <li>
-<p>If you type <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
+<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
 </li>
 <li>
-<p>You cannot delete a timeslot that is not already filled in your timetable.</p>
+<p>You cannot delete a timeslot that is not already in your timetable.</p>
 </li>
 </ul>
 </div>
@@ -478,15 +506,9 @@ Deletes the timeslot from 17:00 to 18:00 on Wednesday from your timetable.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3"><a class="link" href="#show-free-slots-among-selected-people-code-free-code-code-f-code-coming-to-you-in-v1-3">3.8. Show free slots among selected people <code>free</code> (<code>f</code>) (coming to you in v1.3!)</a></h3>
+<h3 id="selecting-a-person-code-select-code-code-s-code"><a class="link" href="#selecting-a-person-code-select-code-code-s-code">3.8. Selecting a person : <code>select</code> (<code>s</code>)</a></h3>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selecting-a-person-code-select-code-code-s-code"><a class="link" href="#selecting-a-person-code-select-code-code-s-code">3.9. Selecting a person : <code>select</code> (<code>s</code>)</a></h3>
-<div class="paragraph">
-<p>Selects the person identified by the index number used in the displayed person list.<br>
+<p>Selects your friend with the specified index, showing you their timetable.<br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -494,13 +516,13 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and displays the person&#8217;s timetable at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The index refers to the index number shown in your friend list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>You cannot select someone who is not your friend yet. Try using the <code>friend</code> command first!</p>
 </li>
 </ul>
 </div>
@@ -512,9 +534,8 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>select 2</code><br>
-Selects the 2nd person in the address book.</p>
+<p><code>select 2</code><br>
+Selects the 2nd person listed in your friend list.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
@@ -522,6 +543,52 @@ Selects the 2nd person in the address book.</p>
 Selects the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show-free-slots-among-selected-people-code-free-code"><a class="link" href="#show-free-slots-among-selected-people-code-free-code">3.9. Show free slots among selected people <code>free</code></a></h3>
+<div class="paragraph">
+<p>Highlights timeslots where everyone specified is free.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>free INDEX&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can specify more than one friend.</p>
+</li>
+<li>
+<p>The indices refer to the index number shown in your friend list.</p>
+</li>
+<li>
+<p>The indices <strong>must be positive integers</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>free 1 2</code><br>
+Highlights timeslots where you, friend 1, and friend 2, are all free to meet up.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After executing the command, you should see the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FreeTimeSuccess.png" alt="FreeTimeSuccess" width="600">
+</div>
+<div class="title">Figure 6. Timeslots highlighted in red are unavailable.</div>
 </div>
 </div>
 <div class="sect2">
@@ -709,12 +776,6 @@ Format: <code>exit</code></p>
 There is no need to save manually.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.18. Encrypting data files <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -732,19 +793,11 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
 <p><strong>Clear</strong> : <code>clear</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p><strong>Edit</strong> : <code>edit [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>edit n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
@@ -778,6 +831,10 @@ e.g. <code>addtime mon 10-12</code></p>
 e.g. <code>deletetime tue 12-14</code></p>
 </li>
 <li>
+<p><strong>Free time</strong> : <code>free</code><br>
+e.g. <code>free 1 2 3</code></p>
+</li>
+<li>
 <p><strong>Import Timetable from a file</strong> : <code>import [FILE_LOCATION]</code></p>
 </li>
 <li>
@@ -786,4 +843,4 @@ e.g. <code>deletetime tue 12-14</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 14:42:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 15:12:41 UTC</div></div></div></body></html>

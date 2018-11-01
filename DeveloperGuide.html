@@ -838,7 +838,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect3">
 <h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current implementation</a></h4>
 <div class="paragraph">
-<p>The timetable feature allows users to store and view their own timetables. Additionally, it allows users to view a deconflicted timetable, a timetable which highlights mutual free timeslots among all selected users.</p>
+<p>FreeTime&#8217;s timetable feature allows users to store and view their own timetables.<br></p>
+</div>
+<div class="paragraph">
+<p>FreeTime can also display a deconflicted timetable, highlighting mutually free timeslots among the current user and all other selected people.</p>
 </div>
 <div class="paragraph">
 <p>The timetable feature can be broadly split into two parts:<br>
@@ -848,9 +851,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect4">
 <h5 id="backend-implementation"><a class="link" href="#backend-implementation">Backend implementation</a></h5>
 <div class="paragraph">
-<p>The <code>TimeTable</code> object is composed under the <code>Person</code> class in <code>Model</code>. Each <code>TimeTable</code> in turn is composed of any number of <code>TimeSlot</code> objects. Each <code>TimeSlot</code> consists of:<br>
-1. One <code>DayOfWeek</code> object to indicate the day of week of the timeslot;<br>
-2. Two <code>LocalTime</code> objects to indicate the start time and end time of the timeslot respectively.</p>
+<p>The <code>TimeTable</code> object is composed under the <code>Person</code> class in <code>Model</code>. Each <code>TimeTable</code> is composed of any number of <code>TimeSlot</code> objects. Each <code>TimeSlot</code> consists of:<br>
+1. One <code>DayOfWeek</code> object to indicate the day of week of the <code>TimeSlot</code>;<br>
+2. Two <code>LocalTime</code> objects to indicate the start time and end time of the <code>TimeSlot</code> respectively.<br>
+3. One <code>Color</code> object to indicate the color of the <code>TimeSlot</code> when displayed on FreeTime&#8217;s UI.</p>
 </div>
 <div class="paragraph">
 <p>The following class diagram summarises the relationship between the components of the TimeTable class:</p>
@@ -862,13 +866,24 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="title">Figure 13. Structure of the TimeTable Class</div>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
+<p>The <code>TimeTable</code> class implements two key methods:<br>
+1. <code>TimeTable#addTimeSlot()</code> - to add a new <code>TimeSlot</code> to the <code>TimeTable</code><br>
+2. <code>TimeTable#deleteTimeSlot()</code> - to remove an existing <code>TimeSlot</code> from the <code>TimeTable</code><br></p>
 </div>
 <div class="paragraph">
-<p>The <code>TimeTable</code> class implements three key methods:<br>
-1. <code>TimeTable#addTimeSlot()</code> - to add a new <code>TimeSlot</code> to the <code>TimeTable</code><br>
-2. <code>TimeTable#deleteTimeSlot()</code> - to remove an existing <code>TimeSlot</code> from the <code>TimeTable</code><br>
-3. <code>TimeTable#deconflict()</code> - to create a deconflicted timetable from two or more <code>TimeTable</code> objects<br></p>
+<p>The class <code>DeconflictTimeTable</code>, which inherits from <code>TimeTable</code>, is used to display mutually free timeslots among users.<br></p>
+</div>
+<div class="paragraph">
+<p>The key difference between <code>TimeTable</code> and <code>DeconflictTimeTable</code> lies in the implementation of the <code>addTimeSlot()</code> method. <code>TimeTable#addTimeSlot()</code> throws an exception when the <code>TimeSlot</code> to be added overlaps with an existing <code>TimeSlot</code> in the <code>TimeTable</code>. However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlot</code> to be added with all overlapping <code>TimeSlot</code> objects in the <code>TimeTable</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows the significant method calls for generating a <code>DeconflictTimeTable</code> object from two <code>TimeTable</code> objects:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeconflictSequenceDiagram.png" alt="DeconflictSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 14. Sequence Diagram Showing the Generation of a <code>DeconflictTimeTable</code></div>
 </div>
 </div>
 <div class="sect4">
@@ -886,21 +901,22 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="content">
 <img src="images/TimeTableScreenshotLabelled.png" alt="TimeTableScreenshotLabelled" width="800">
 </div>
-<div class="title">Figure 14. Layout of the TimeTablePanel</div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
+<div class="title">Figure 15. Layout of the TimeTablePanel</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="interaction-between-backend-and-frontend"><a class="link" href="#interaction-between-backend-and-frontend">Interaction between backend and frontend</a></h5>
 <div class="paragraph">
-<p>The following sequence diagrams show the sequence of significant method calls for the execution of the <code>TimeTable#addTimeSlot()</code> method. The execution of the <code>TimeTable#removeTimeSlot()</code> method is implemented in a similar manner.</p>
+<p>The following sequence diagram show the significant method calls for the execution of the <code>addtime</code> command. The execution of the <code>deletetime</code> is implemented in a similar manner.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/TimeTableSequenceDiagram.png" alt="TimeTableSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 16. Sequence Diagram Showing the Execution of an <code>addtime</code> Command</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
 </div>
 </div>
 </div>
@@ -915,7 +931,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement, only one method (<code>loadTimeTable</code>) required</p>
+<p>Pros: Easy to implement, only one method (<code>loadTimeTable()</code>) is required</p>
 </li>
 <li>
 <p>Cons: May suffer from performance degradation, especially when the <code>TimeTable</code> to be loaded contains many <code>TimeSlot</code> objects</p>
@@ -924,11 +940,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Detects the difference between the currently displayed <code>TimeTable</code> before adding or deleting <code>TimeTablePanelTimeSlot</code> objects accordingly.</p>
+<p><strong>Alternative 2:</strong> Detect the difference between the currently displayed <code>TimeTable</code> before adding or deleting <code>TimeTablePanelTimeSlot</code> objects accordingly.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will reduce execution time of methods which update the displayed <code>TimeTable</code></p>
+<p>Pros: Reduces execution time of methods which update the displayed <code>TimeTable</code></p>
 </li>
 <li>
 <p>Cons: A method to detect the difference between <code>TimeTable</code> objects must be implemented. May not result in significant performance improvements when switching between <code>TimeTable</code> objects with few or no <code>TimeSlot</code> objects in common.</p>
@@ -968,7 +984,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="content">
 <img src="images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 15. Interactions between the Logic Component and Model Component for the <code>import</code> Command</div>
+<div class="title">Figure 17. Interactions between the Logic Component and Model Component for the <code>import</code> Command</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -1196,7 +1212,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 16. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 18. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -1933,4 +1949,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 17:27:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 05:26:17 UTC</div></div></div></body></html>

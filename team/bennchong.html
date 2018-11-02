@@ -10,8 +10,9 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>FreeTime is a security-enabled desktop application that is used for finding mutually availble slots between its users. This
-available slot will be displayed for the user to choose from, which will be reflected in his timetable using our FreeTime GUI.</p>
+<p>FreeTime&#8482; is a security-enabled desktop application that is used for finding mutually availble slots between its users. This
+available slot will be displayed for the user to choose from, which will be reflected in his timetable using our FreeTime
+Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
 <p>This project portfolio would be introducing you to my team that has developed this product in the span of a semester. In addition to giving you a brief general overview of this application
@@ -19,12 +20,12 @@ feature, I would be going indepth into the details on how my own features are im
 and hopefully you would perhaps also learn something along the way.</p>
 </div>
 <div class="paragraph">
-<p>So sit tight, and let me tell you more about FreeTime.</p>
+<p>So sit tight, and let me tell you more about <em>FreeTime</em>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="freetime-features"><a class="link" href="#freetime-features">FreeTime Features</a></h2>
+<h2 id="freetime-features"><a class="link" href="#freetime-features">FreeTime&#8482; Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In addition to essential security features such as login and registering, we have a clean, minimalistic landing page that is user-friendly.</p>
@@ -40,6 +41,18 @@ this particular group of friends.</p>
 <div class="paragraph">
 <p>Using the command <code>freetime</code>, you would be presented with a timetable that shows you what are your common free slots are. Thus you are freed from the painful moments of finding a common free slot in huge groups.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+More information below in User Guide
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -47,6 +60,9 @@ this particular group of friends.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this section, I would be briefly telling you about my contributions to this project, and any interesting points that you could find useful.</p>
+</div>
+<div class="paragraph">
+<p>GIVE THE REASON WHY. USE LONGER SENTENCE BELOW</p>
 </div>
 <div class="ulist">
 <ul>
@@ -58,15 +74,24 @@ this particular group of friends.</p>
 <p>What it does: Allows the users to have unique access and control to his own timetable</p>
 </li>
 <li>
-<p>Justification: To prevent malicious users to edit other users' timetable, and to introduce different privacy levels. Other users that you are friends with allows you to view their
-timetables and find common slots with them.</p>
+<p>Justification: To be able to prevent others from editing your own timetable, and to facilitate different privacy levels.
+Privacy levels are given to users to have control over what they feel comfortable sharing between strangers and friends.</p>
 </li>
 <li>
-<p>Highlights: Other than having the ability to add friends, you are now able to add groups since each users are differentiated from each other</p>
+<p>Highlights: Not only have I learnt how to implement features, I have to also consider the implications of having some
+of them implemented. For example, to have an extra level of security such as 2FA(Factor Authorization) step might seem beneficial,
+but does this application warrants the extra steps to log in? Not so in my opinion.</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Other than having the ability to add friends, you are now able to add groups since each users are differentiated from each other</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Minor enhancement</strong>: Used a hashing feature together with a salt to store user&#8217;s password</p>
 </li>
@@ -155,6 +180,18 @@ new users to use the application.</p>
 <div class="paragraph">
 <p>The timetable content is locked, and it requires a user to either login with a pre-existing account, or register a new one.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The application has a default user with username: <strong>test</strong> and password: <strong>test</strong>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>There are five security related commands that can be entered on this command line:</p>
 </div>
@@ -179,7 +216,7 @@ new users to use the application.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/Login%20Page.png" alt="Login Page" width="790">
+<img src="../images/LoginPage.png" alt="LoginPage" width="790">
 </div>
 <div class="title">Figure 1. Login Page with Command Prompts</div>
 </div>
@@ -187,9 +224,18 @@ new users to use the application.</p>
 <p>At this page you will have to enter your credentials to log in. Only then would you be able to edit and view your own timetable,
 and view your friends' timetable.<br></p>
 </div>
-<div class="paragraph">
-<p>Friends are other users that you have "friended", and all users start off without
-having any friends.<br></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Friends are other users that you have "friended", and all users start off without
+having any friends.<br>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The timetable that belongs to users that are not your friends will not be available to you, till you
@@ -215,15 +261,18 @@ Logins with Username: tim and Password: tam</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Constraints:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Username and Password must not contain any spaces</p>
-</li>
-</ul>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Constraints:<br>
+* Username and Password must not contain any spaces
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -241,18 +290,19 @@ Logins with Username: tim and Password: tam</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Constraints:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Currently all fields must not have spaces too</p>
-</li>
-<li>
-<p>All fields must be entered</p>
-</li>
-</ul>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Constraints:<br>
+* Currently all fields must not have spaces too<br>
+* All fields must be entered
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -412,4 +462,4 @@ then salted and hashed (SHA-512), and finally compared to the stored hashed pass
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 02:59:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 03:21:20 UTC</div></div></div></body></html>

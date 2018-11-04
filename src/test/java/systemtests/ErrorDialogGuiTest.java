@@ -20,7 +20,7 @@ public class ErrorDialogGuiTest extends AddressBookSystemTest {
     private final GuiRobot guiRobot = new GuiRobot();
 
     /**
-     * More roken tests
+     * More broken tests
      */
     // @Test
     public void showErrorDialogs() {

@@ -32,11 +32,12 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
 <li><a href="#timetable-feature">3.2. Timetable feature</a></li>
-<li><a href="#import-timetable-and-export-timetable-feature">3.3. Import timetable and Export timetable feature</a></li>
-<li><a href="#friend-feature">3.4. Friend feature</a></li>
-<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#import-and-export-timetable-feature">3.3. Import and Export timetable feature</a></li>
+<li><a href="#security-implementation">3.4. Security Implementation</a></li>
+<li><a href="#friend-feature">3.5. Friend feature</a></li>
+<li><a href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -961,44 +962,104 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-timetable-and-export-timetable-feature"><a class="link" href="#import-timetable-and-export-timetable-feature">3.3. Import timetable and Export timetable feature</a></h3>
+<h3 id="import-and-export-timetable-feature"><a class="link" href="#import-and-export-timetable-feature">3.3. Import and Export timetable feature</a></h3>
+<div class="paragraph">
+<p>The import and export timetable feature allows users to import and export their timetables from/to external applications as <em>.ics</em> files.</p>
+</div>
+<div class="paragraph">
+<p>The currently supported applications are:<br></p>
+</div>
+<div class="paragraph">
+<p>Import:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NUSMODS [<a href="https://nusmods.com" class="bare">https://nusmods.com</a>]<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Export:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>FreeTime (you export and then import it back in)</p>
+</li>
+<li>
+<p>Google Calendar (Preliminary support: TimeSlots show up as individual events for 1 week.)</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
 <h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current implementation</a></h4>
 <div class="paragraph">
-<p>The import timetable feature allows users to import their timetables from NUSMODS, as an .ics file.</p>
+<p>The import and export feature consists of two parts:<br></p>
 </div>
-<div class="paragraph">
-<p>The timetable feature consists of two parts:<br>
-1. The backend, which handles the reading of the .ics file and the creation of the timetable object.<br>
-2. The frontend, which parses user input, and informs the user of success or failure.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The backend, which handles the reading and writing of <em>.ics</em> files, and the conversion between the <em>.ics</em> format and the TimeTable object.<br></p>
+</li>
+<li>
+<p>The frontend, which parses user input, and informs the user of success or failure.</p>
+</li>
+</ol>
 </div>
 <div class="sect4">
-<h5 id="backend-implementation-2"><a class="link" href="#backend-implementation-2">Backend implementation</a></h5>
+<h5 id="backend-implementation-import"><a class="link" href="#backend-implementation-import">Backend implementation - Import</a></h5>
 <div class="paragraph">
-<p>The file is read and parsed into a TimeTable by IcsUtil class.</p>
+<p>For import, the file is read from the disk using biweekly (3rd-party library), and then subsequently converted into a TimeTable by the IcsUtil class.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the TimeTable is imported:<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram" width="800">
+<img src="images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
 </div>
-<div class="title">Figure 17. Interactions between the Logic Component and Model Component for the <code>import</code> Command</div>
+<div class="title">Figure 17. Interactions between the Logic Component and IcsUtil for the <code>import</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-export"><a class="link" href="#backend-implementation-export">Backend implementation - Export</a></h5>
+<div class="paragraph">
+<p>For export, the TimeTable is converted into a iCalendar object by IcsUtil, and then written to disk as <em>.ics</em> file using biweekly (3rd-party library).</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the TimeTable is exported:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ImportSequenceDiagrsssam.png" alt="ImportSequenceDiagrsssam" width="600">
+</div>
+<div class="title">Figure 18. Interactions between the Logic Component and IcsUtil for the <code>export</code> Command</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
 </div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-icsutil-class"><a class="link" href="#backend-implementation-icsutil-class">Backend implementation - IcsUtil Class</a></h5>
 <div class="paragraph">
-<p>The <code>IcsUtil</code> class implements two key utility methods for handling .ics files:<br>
-1. <code>IcsUtil#readTimeTableFromFile()</code> - to read an <code>Optional&lt;TimeTable&gt;</code> from an .ics file; accepts the <code>filePath</code> of the .ics file as parameter<br>
-2. <code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the .ics file as parameter<br></p>
+<p>The <code>IcsUtil</code> class implements two key utility methods for handling <em>.ics</em> files:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>IcsUtil#readTimeTableFromFile()</code> - to read an <code>Optional&lt;TimeTable&gt;</code> from an <em>.ics</em> file; accepts the <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+</li>
+<li>
+<p><code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect4">
 <h5 id="frontend-implementation-2"><a class="link" href="#frontend-implementation-2">Frontend implementation</a></h5>
 <div class="paragraph">
-<p>Same as the other commands, see <a href="#Events-Driven-Nature"><strong><code>Events-Driven nature of the design</code></strong></a>.</p>
+<p>Similar to the other commands; see <a href="#Events-Driven-Nature"><strong><code>Events-Driven nature of the design</code></strong></a>.</p>
 </div>
 </div>
 </div>
@@ -1009,27 +1070,61 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> All code related to parsing .ics timetable files are inside 'IcsUtil' class.</p>
+<p><strong>Alternative 1 (current choice):</strong> All code related to parsing <em>.ics</em> timetable files are inside 'IcsUtil' class. When executing ImportCommand/ExportCommand, it directly calls a method in IcsUtil.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: All functions that have to do with .ics parsing is in 1 class.</p>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All methods that have to do with <em>.ics</em> parsing are in one class. Easier to implement and manage, given that there are only a few methods for now.</p>
 </li>
 <li>
-<p>Cons: Single responsibility principle is broken.</p>
+<p>Less dependencies. (directly call IcsUtil to read/write .ics files; compared to having to call IcsStorage which then calls IcsUtil).</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Follow the existing implementation of 'Storage'; create an IcsTimeTableStorage class to access the ics file in hard disk, just like what is being done with 'preferences.json' and 'AddressBook.xml' files.</p>
+<p>Cons:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Classes that have to do with IO are in the storage subsystem.</p>
+<p>Single responsibility principle is broken. Also, difficult to manage if the class expands and has more methods.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Cons: Current implementation favors 'permanent' file storage, not on-demand IO (as in the import and export command).</p>
+<p><strong>Alternative 2 (Go through the <a href="#Design-Storage"><strong><code>Storage</code></strong></a> subsystem):</strong> Follow the existing IO implementation of the other files: <code>addressbook.xml</code> and <code>preferences.json</code>; create an IcsTimeTableStorage class to access the ics file in hard disk.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Similar implementation to existing: Classes that have to do with IO are accessed using the Storage Interface.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Increased dependency: LogicManager will then have dependency on Storage.</p>
+</li>
+<li>
+<p>More difficult to implement: Current implementation of <a href="#Design-Storage"><strong><code>Storage</code></strong></a> does not favor 'on-demand' instantiation (as in the import and export command).</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1037,17 +1132,21 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p>&#160;
-=== Security Implementation
-To begin this section, we would need to introduce the idea of a Authenticated User instance.
+<p>&#160;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-implementation"><a class="link" href="#security-implementation">3.4. Security Implementation</a></h3>
+<div class="paragraph">
+<p>To begin this section, we would need to introduce the idea of a Authenticated User instance.
 Everytime a user successfully logs in, or creates a new account, the application will create an Authenticated User in
 Model. This User is an extension of the Person Class, which different UI and commands will access it. One example would
 be the friend&#8217;s UI panel, where it has to know the current user to know his friends</p>
 </div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.3.3. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>This section will be broken down into<br>
 1. Front-End<br>
@@ -1093,26 +1192,26 @@ then salted and hashed (SHA-512), and finally compared to the stored hashed pass
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.3.4. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.2. Design Considerations</a></h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="friend-feature"><a class="link" href="#friend-feature">3.4. Friend feature</a></h3>
+<h3 id="friend-feature"><a class="link" href="#friend-feature">3.5. Friend feature</a></h3>
 <div class="sect3">
-<h4 id="feature-description"><a class="link" href="#feature-description">3.4.1. Feature description</a></h4>
+<h4 id="feature-description"><a class="link" href="#feature-description">3.5.1. Feature description</a></h4>
 <div class="paragraph">
 <p>The friend feature allows users to befriend and add other users to their friend list.
 Timetables are only viewable for users in your friend list and timetables can only be deconflicted within your friends.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.4.2. Current implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.2. Current implementation</a></h4>
 <div class="paragraph">
 <p>The feature is implemented with two main parts. The frontend and the backend, which will be explained below.</p>
 </div>
 <div class="sect4">
-<h5 id="backend-implementation-3"><a class="link" href="#backend-implementation-3">Backend implementation</a></h5>
+<h5 id="backend-implementation-2"><a class="link" href="#backend-implementation-2">Backend implementation</a></h5>
 <div class="paragraph">
 <p>The <code>User</code> is associated with a specific <code>Person</code>. Each person can have any number of <code>Friend</code> objects.
 Every friend will have a <code>Name</code> object that corresponds to the specific <code>Person</code> object in the list.</p>
@@ -1121,7 +1220,7 @@ Every friend will have a <code>Name</code> object that corresponds to the specif
 <div class="content">
 <img src="images/FriendClassDiagram.png" alt="FriendClassDiagram" width="200">
 </div>
-<div class="title">Figure 18. Class diagram of Friend</div>
+<div class="title">Figure 19. Class diagram of Friend</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -1137,7 +1236,7 @@ PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one
 <div class="content">
 <img src="images/FriendFeatureFrontEndDiagram.png" alt="FriendFeatureFrontEndDiagram" width="300">
 </div>
-<div class="title">Figure 19. Class diagram of Friend</div>
+<div class="title">Figure 20. Class diagram of Friend</div>
 </div>
 </div>
 <div class="sect4">
@@ -1183,20 +1282,20 @@ PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1227,7 +1326,7 @@ PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1293,7 +1392,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 20. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 21. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2030,4 +2129,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 13:50:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 17:26:37 UTC</div></div></div></body></html>

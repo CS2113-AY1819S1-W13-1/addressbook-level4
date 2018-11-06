@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Khoo Yuan Hui - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Timetable Deconflicter (TBC)</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Khoo Yuan Hui - Project Portfolio</h1></div><div id="content"><h1 id="project-freetime" class="sect0"><a class="link" href="#project-freetime">PROJECT: FreeTime</a></h1>
+<hr>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">1. Overview</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>This project was done in my second year at university, as part of a module on Software Engineering.</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>FreeTime is the end-product of my CS2113T project. Our team was given a existing project (AddressBook 4) to morph to something different that targets a group of users. We chose to target students.</p>
+</div>
+<div class="paragraph">
+<p>FreeTime is a Time-Planner application. It is primarily aimed at Students who need to collaborate with their peers, but find manually comparing timetables a hassle.<br></p>
+</div>
+<div class="paragraph">
+<p>The user interacts with it using a command-line interface (CLI), but it also has a graphical user interface (GUI) created with JavaFX. It is written in Java, and has about 10 kLoC.<br></p>
+</div>
+<div class="paragraph">
+<p>The changes that we have done can be seen in the picture below:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/alexiscatnip_PPP_overview.png" alt="alexiscatnip PPP overview">
+</div>
+</div>
+<div class="paragraph">
+<p>AddressBook 4: <a href="https://github.com/nusCS2113-AY1819S1/addressbook-level4" class="bare">https://github.com/nusCS2113-AY1819S1/addressbook-level4</a><br>
+FreeTime: <a href="https://github.com/CS2113-AY1819S1-W13-1/main" class="bare">https://github.com/CS2113-AY1819S1-W13-1/main</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of contributions</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This section summarises my personal contributions to this team project.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: <strong>Import and Export Commands</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to import and export timetables that are in the .ics format.</p>
+</li>
+<li>
+<p>Justification: It was a painful process for users to manually add their timeslots using the [<a href="https://github.com&lt;TODO&gt;">AddTime Command</a>].</p>
+</li>
+<li>
+<p>Highlights: This enhancement makes use of a third party library to correctly format the .ics file format (given in RFC 5545; <a href="https://tools.ietf.org/html/rfc5545" class="bare">https://tools.ietf.org/html/rfc5545</a>). Thus, the project now has an extra dependency. The alternative to a third-party library is writing the code for the formatting by myself; which would be too time consuming.</p>
+</li>
+<li>
+<p>Credits: <strong>biweekly third-party library</strong> (<a href="https://github.com/mangstadt/biweekly" class="bare">https://github.com/mangstadt/biweekly</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: <strong>Save user&#8217;s timetable across application instances</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the application to save the timetable into the disk automatically. This means that it can remmeber our users' timetables across restarts.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com&lt;TODO&gt;">Functional code</a>] [<a href="https://github.com&lt;TODO&gt;">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added 'label' to timeslot, so that users can label the timeslot with the module name. (Pull requests <a href="https://github.com">#33</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created documentation for import, export command and save timetable feature: <a href="https://github.com">#14</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+</li>
+<li>
+<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated a third party library (biweekly) to the project (<a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/55">#55</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>{you can add/remove categories in the list above}</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Here are my contributions to the User Guide. They showcase my ability to write user documentation.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="import-timetable-code-import-code-code-im-code"><a class="link" href="#import-timetable-code-import-code-code-im-code">3.1. Import Timetable : <code>import</code> (<code>im</code>)</a></h3>
+<div class="paragraph">
+<p>Imports a timetable for the current user from a specified (<em>.ics</em>) file.<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Only supports (<em>.ics</em>) files exported from NUSMODS.</p>
+</li>
+<li>
+<p>Do <strong>not</strong> include the (<em>.ics</em>) file extension when typing the command.</p>
+</li>
+<li>
+<p>The file will be imported from the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file. Please see the image below:<br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/UG_importexport.png" alt="UG importexport" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>import [FILE_NAME]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>import my_file</code><br>
+Imports the timetable at <code>(root_folder)\import_export\my_file.ics</code><br>
+(where 'root_folder' is the folder that the application is in.)<br></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can obtain your timetable on NUSMODS as an (<em>.ics</em>) file, as shown in the picture below:
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/importics.png" alt="importics" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-timetable-code-export-code-code-ex-code"><a class="link" href="#export-timetable-code-export-code-code-ex-code">3.2. Export Timetable : <code>export</code> (<code>ex</code>)</a></h3>
+<div class="paragraph">
+<p>Exports the currently-displayed timetable to the specified (<em>.ics</em>) file.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Your timetable will export as an (<em>.ics</em>) file. This file is currently only compatible with FreeTime.</p>
+</li>
+<li>
+<p>Do not include the (<em>.ics</em>) file extension when typing the command.</p>
+</li>
+<li>
+<p>Existing file with the same name will be overwritten. Use with care!</p>
+</li>
+<li>
+<p>The file will be imported to the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file. Please see the image below:</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/UG_importexport.png" alt="UG importexport" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>export [FILE_NAME]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>export my_file.ics</code><br>
+Exports the displayed timetable to <code>(root_folder)\import_export\my_file.ics</code><br>
+(where 'root_folder' is the folder that the application is in.)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Here are my contributions to the Developer Guide. They showcase my ability to write technical documentation and my technical contributions to the project.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="import-and-export-timetable-feature"><a class="link" href="#import-and-export-timetable-feature">4.1. Import and Export timetable feature</a></h3>
+<div class="paragraph">
+<p>The import and export timetable feature allows users to import and export their timetables from/to external applications as <em>.ics</em> files.</p>
+</div>
+<div class="paragraph">
+<p>The currently supported applications are:<br></p>
+</div>
+<div class="paragraph">
+<p>Import:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NUSMODS [<a href="https://nusmods.com" class="bare">https://nusmods.com</a>]<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Export:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>FreeTime (you export and then import it back in)</p>
+</li>
+<li>
+<p>Google Calendar (Preliminary support: TimeSlots show up as individual events for 1 week.)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current implementation</a></h4>
+<div class="paragraph">
+<p>The import and export feature consists of two parts:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The backend, which handles the reading and writing of <em>.ics</em> files, and the conversion between the <em>.ics</em> format and the TimeTable object.<br></p>
+</li>
+<li>
+<p>The frontend, which parses user input, and informs the user of success or failure.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-import"><a class="link" href="#backend-implementation-import">Backend implementation - Import</a></h5>
+<div class="paragraph">
+<p>For import, the file is read from the disk using biweekly (3rd-party library), and then subsequently converted into a TimeTable by the IcsUtil class.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the TimeTable is imported:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
+</div>
+<div class="title">Figure 1. Interactions between the Logic Component and IcsUtil for the <code>import</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-export"><a class="link" href="#backend-implementation-export">Backend implementation - Export</a></h5>
+<div class="paragraph">
+<p>For export, the TimeTable is converted into a iCalendar object by IcsUtil, and then written to disk as <em>.ics</em> file using biweekly (3rd-party library).</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the TimeTable is exported:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportSequenceDiagrsssam.png" alt="ImportSequenceDiagrsssam" width="600">
+</div>
+<div class="title">Figure 2. Interactions between the Logic Component and IcsUtil for the <code>export</code> Command</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-icsutil-class"><a class="link" href="#backend-implementation-icsutil-class">Backend implementation - IcsUtil Class</a></h5>
+<div class="paragraph">
+<p>The <code>IcsUtil</code> class implements two key utility methods for handling <em>.ics</em> files:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>IcsUtil#readTimeTableFromFile()</code> - to read an <code>Optional&lt;TimeTable&gt;</code> from an <em>.ics</em> file; accepts the <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+</li>
+<li>
+<p><code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="frontend-implementation"><a class="link" href="#frontend-implementation">Frontend implementation</a></h5>
+<div class="paragraph">
+<p>Similar to the other commands; see <a href="#Events-Driven-Nature"><strong><code>Events-Driven nature of the design</code></strong></a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-which-classes-and-which-system-s-should-parse-the-ics-file-format"><a class="link" href="#aspect-which-classes-and-which-system-s-should-parse-the-ics-file-format">Aspect: Which Classes (and which system(s)) should parse the ics file format?</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> All code related to parsing <em>.ics</em> timetable files are inside 'IcsUtil' class. When executing ImportCommand/ExportCommand, it directly calls a method in IcsUtil.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All methods that have to do with <em>.ics</em> parsing are in one class. Easier to implement and manage, given that there are only a few methods for now.</p>
+</li>
+<li>
+<p>Less dependencies. (directly call IcsUtil to read/write .ics files; compared to having to call IcsStorage which then calls IcsUtil).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single responsibility principle is broken. Also, difficult to manage if the class expands and has more methods.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (Go through the <a href="#Design-Storage"><strong><code>Storage</code></strong></a> subsystem):</strong> Follow the existing IO implementation of the other files: <code>addressbook.xml</code> and <code>preferences.json</code>; create an IcsTimeTableStorage class to access the ics file in hard disk.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Similar implementation to existing: Classes that have to do with IO are accessed using the Storage Interface.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Increased dependency: LogicManager will then have dependency on Storage.</p>
+</li>
+<li>
+<p>More difficult to implement: Current implementation of <a href="#Design-Storage"><strong><code>Storage</code></strong></a> does not favor 'on-demand' instantiation (as in the import and export command).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-some-other-project"><a class="link" href="#project-some-other-project">5. PROJECT: &lt;some other project&gt;</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 17:26:37 UTC</div></div></div></body></html>

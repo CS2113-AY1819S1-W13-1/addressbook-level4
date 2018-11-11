@@ -74,9 +74,14 @@
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and shutdown</a></li>
+<li><a href="#register-logging-in-and-logging-out">F.2. Register, logging in, and logging out</a></li>
+<li><a href="#basic-commands">F.3. Basic commands</a></li>
+<li><a href="#adding-and-removing-friends">F.4. Adding and removing friends</a></li>
+<li><a href="#finding-a-person-by-name-and-by-group">F.5. Finding a person by name and by group</a></li>
+<li><a href="#adding-and-removing-timeslots-from-the-user-s-timetable">F.6. Adding and removing timeslots from the user&#8217;s timetable</a></li>
+<li><a href="#showing-free-timeslots-across-users">F.7. Showing free timeslots across users</a></li>
+<li><a href="#importing-and-exporting-the-user-s-timetable">F.8. Importing and exporting the user&#8217;s timetable</a></li>
 </ul>
 </li>
 </ul>
@@ -2050,7 +2055,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2062,7 +2067,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+Expected: Shows the login page. The window size may not be optimual.</p>
 </li>
 </ol>
 </div>
@@ -2083,61 +2088,303 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
+<h3 id="register-logging-in-and-logging-out"><a class="link" href="#register-logging-in-and-logging-out">F.2. Register, logging in, and logging out</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Opening the help window</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Test case: <code>help</code><br>
+Expected: The help window opens, showing the User Guide.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Logging in with a test account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>login u\test pw\test</code><br>
+Expected: The login is successful and the main GUI appears. The <code>Me</code> panel should show a person card panel with <code>test</code> in the name field.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Registering a new account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>register u/John Goe pw/testpassword p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 t/CS2113T</code><br>
+Expected: The registration is successful and the main GUI appears. The <code>Me</code> panel should show a person card panel with <code>John Goe</code> in the name field.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+<p>Trying to register a new account with an existing username</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>register u/test pw/testpassword p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 t/CS2113T</code><br>
+Expected: An error message appears indicating that the user already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Logging out</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have logged in to a user account</p>
+</li>
+<li>
+<p>Test case: <code>logout</code><br>
+Expected: The logout is successful and the login screen reappears with the message "Successfully logged out".</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All following sections assume that the user is currently logged into FreeTime.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="basic-commands"><a class="link" href="#basic-commands">F.3. Basic commands</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Editing your details</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Test case: <code>edit p/91234567 e/johndoe@example.com t/CS2101</code><br>
+Expected: The details of the user in the <code>Me</code> panel is updated to specified details.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Showing command history</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>history</code><br>
+Expected: The list of all previously-entered commands appears below the command box.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="adding-and-removing-friends"><a class="link" href="#adding-and-removing-friends">F.4. Adding and removing friends</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a friend</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>friend 1</code><br>
+Expected: The first person in the <code>Others</code> panel moves to the <code>Friends</code> panel. Hidden fields, namely phone number, address, and email of this person should now be visible.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Removing a friend</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have previously added a friend</p>
+</li>
+<li>
+<p>Test case: <code>unfriend 1</code><br>
+Expected: The first person in the <code>Friends</code> panel moves to the <code>Others</code> panel. Hidden fields, namely phone number, address, and email of this person should no longer be visible.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-person-by-name-and-by-group"><a class="link" href="#finding-a-person-by-name-and-by-group">F.5. Finding a person by name and by group</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Finding a person by name</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>find John</code><br>
+Expected: Only people with the word <code>John</code> in their names in both <code>Friends</code> and <code>Others</code> panels are shown. The command box reflects the total number of people listed in both panels.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Finding a person by group</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>group CS2101-A</code><br>
+Expected: Only people with the group <code>CS2101-A</code> in both <code>Friends</code> and <code>Others</code> panels are shown. The command box reflects the total number of people listed in both panels.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all people</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Have previously used the <code>find</code> or <code>group</code> command</p>
+</li>
+<li>
+<p>Test case: <code>listall</code><br>
+Expected: All people currently registered are shown in their respective panels.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-and-removing-timeslots-from-the-user-s-timetable"><a class="link" href="#adding-and-removing-timeslots-from-the-user-s-timetable">F.6. Adding and removing timeslots from the user&#8217;s timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View the user&#8217;s timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>select me</code><br>
+Expected: If logged in with a newly-registed account, the timetable panel should be empty. Otherwise, the user&#8217;s timetable is shown on the timetable panel.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>View a friend&#8217;s timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Have previously added a friend</p>
+</li>
+<li>
+<p>Test case: <code>select 1</code><br>
+Expected: The first person in the <code>Friends</code> panel is highlighted, with his timetable showing in the timetable panel (should be non-blank for users pre-loaded into FreeTime)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a timeslot to your timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: The timeslot from 0800 hrs to 1000 hrs on Monday is empty</p>
+</li>
+<li>
+<p>Test case: <code>add mon 8-10</code><br>
+Expected: A new timeslot, represented by a colored rectangle, appears in the corresponding position on the timetable. The timetable should also automatically resize to begin at 0800 hrs instead of the default 1000 hrs.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Removing a timeslot from your timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: The timeslot from 0800 hrs to 1000 hrs on Monday is occupied by a single timeslot</p>
+</li>
+<li>
+<p>Test case: <code>delete mon 8-10</code><br>
+Expected: The timeslot corresponding to Monday, 0800 hrs to 1000 hrs is removed from the timetable panel. If no other timeslots in the timetable begin before 1000 hrs, the timetable should automatically resize to begin at the default 1000 hrs.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="showing-free-timeslots-across-users"><a class="link" href="#showing-free-timeslots-across-users">F.7. Showing free timeslots across users</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Showing free timeslots across users</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have previously added a friend</p>
+</li>
+<li>
+<p>Test case: <code>free 1</code><br>
+Expected: A deconflicted timetable should appear in the timetable panel. Timeslots where both the user and the friend at index 1 are available are highlighted in green. All other timeslots are highlighted in red.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-and-exporting-the-user-s-timetable"><a class="link" href="#importing-and-exporting-the-user-s-timetable">F.8. Importing and exporting the user&#8217;s timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporting a timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Has previously added a timeslot to the user&#8217;s timetable</p>
+</li>
+<li>
+<p>Test case: <code>select me</code>, followed by <code>export file</code><br>
+Expected: The user&#8217;s timetable is exported to <code>[root]/import_export/file.ics</code>, where <code>[root]</code> represents the directory where FreeTime.jar is located.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Importing a timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: Has previously exported a timetable with the file name <code>file.ics</code>, or has generated an .ics file using NUSMods, moved said file to the <code>import_export</code> directory under the root directory, and renamed the file to <code>file.ics</code><br></p>
+</li>
+<li>
+<p>Test case: <code>import file</code><br>
+Expected: The user&#8217;s timetable is imported from the .ics file and should be shown on the timetable panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:37:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 16:49:22 UTC</div></div></div></body></html>

@@ -106,10 +106,10 @@ This is to enhance the search feature in the case where there are too many users
 <div class="sect2">
 <h3 id="group"><a class="link" href="#group">Locating persons by group : <code>group</code> (<code>t</code>)</a></h3>
 <div class="paragraph">
-<p>Find persons whose group tags match the specified group tags.</p>
+<p>Find persons whose groups match the specified groups.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>group TAGNAME [MORE_TAGNAMES]</code></p>
+<p>Format: <code>group GROUPNAME [MORE_GROUPNAMES]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -119,10 +119,10 @@ This is to enhance the search feature in the case where there are too many users
 <p>The search is case sensitive. e.g <code>CS2101</code> will not match <code>cs2101</code></p>
 </li>
 <li>
-<p>The order of the tagname does not matter. e.g. <code>CS2101 CS2113T</code> will match <code>CS2113T CS2101</code></p>
+<p>The order of the groups do not matter. e.g. <code>CS2101 CS2113T</code> will match <code>CS2113T CS2101</code></p>
 </li>
 <li>
-<p>Persons matching at least one group tag will be returned (i.e. <code>OR</code> search). e.g. <code>CS2113T CS2101</code> will return persons with either <code>CS2101</code> or <code>CS2113T</code> tags</p>
+<p>Persons matching at least one group will be returned (i.e. <code>OR</code> search). e.g. <code>CS2113T CS2101</code> will return persons with in either <code>CS2101</code> or <code>CS2113T</code> groups</p>
 </li>
 </ul>
 </div>
@@ -135,11 +135,11 @@ This is to enhance the search feature in the case where there are too many users
 <ul>
 <li>
 <p><code>group CS2101</code><br>
-Filters both the others list and the friends list to show only users with the group tag "CS2101".</p>
+Filters both the others list and the friends list to show only users with the group "CS2101".</p>
 </li>
 <li>
 <p><code>group CS2101 CS2113T</code><br>
-Filters both the others list and the friends list to show only users with both group tags "CS2101" and "CS2113T".</p>
+Filters both the others list and the friends list to show only users with both group "CS2101" and "CS2113T".</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -152,7 +152,7 @@ Filters both the others list and the friends list to show only users with both g
 </div>
 </li>
 <li>
-<p>After executing <code>group CS2113T</code>, all the users with the tag <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
+<p>After executing <code>group CS2113T</code>, all the users with the group <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../images/TagCommandExecutedPS.png" alt="TagCommandExecutedPS" width="790">
@@ -563,4 +563,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 18:51:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 19:10:41 UTC</div></div></div></body></html>

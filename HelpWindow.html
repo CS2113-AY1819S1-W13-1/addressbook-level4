@@ -44,7 +44,6 @@
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
-<li><a href="#command-summary">6. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -418,10 +417,10 @@ to your timetable might be lost.
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>register n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>register n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>[p/PHONE_NUMBER][t/TAG]</code> can be used as <code>p/12345678 t/CS2101</code> or as <code>t/CS2101</code>.</p>
+<p>Items in square brackets are optional e.g <code>[p/PHONE_NUMBER][g/GROUP]</code> can be used as <code>p/12345678 g/CS2101</code> or as <code>g/CS2101</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/CS2101</code>, <code>t/CS2113T t/W13-1</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[g/GROUP]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>g/CS2101</code>, <code>g/CS2113T g/W13-1</code> etc.</p>
 </li>
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>e/EMAIL p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER e/EMAIL</code> is also acceptable.</p>
@@ -472,7 +471,7 @@ After filtering your results by executing commands such as <code>group</code> or
 <p>Edits your information in the database.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Format: <code>edit [p/PHONE] [e/EMAIL] [a/ADDRESS] [g/GROUP]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -482,13 +481,13 @@ After filtering your results by executing commands such as <code>group</code> or
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing groups, your existing groups will be removed i.e adding groups is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all your groups by typing <code>g/</code> without specifying any groups after it.</p>
 </li>
 <li>
-<p>Tags should be alphanumeric (contains letters and numbers) and can contain hyphens "-" and underscores "_"</p>
+<p>Groups should be alphanumeric (contains letters and numbers) and can contain hyphens "-" and underscores "_"</p>
 </li>
 </ul>
 </div>
@@ -551,10 +550,10 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <div class="sect2">
 <h3 id="group"><a class="link" href="#group">4.5. Locating persons by group : <code>group</code> (<code>t</code>)</a></h3>
 <div class="paragraph">
-<p>Find persons whose group tags match the specified group tags.</p>
+<p>Find persons whose groups match the specified groups.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>group TAGNAME [MORE_TAGNAMES]</code></p>
+<p>Format: <code>group GROUPNAME [MORE_GROUPNAMES]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -564,10 +563,10 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <p>The search is case sensitive. e.g <code>CS2101</code> will not match <code>cs2101</code></p>
 </li>
 <li>
-<p>The order of the tagname does not matter. e.g. <code>CS2101 CS2113T</code> will match <code>CS2113T CS2101</code></p>
+<p>The order of the groups do not matter. e.g. <code>CS2101 CS2113T</code> will match <code>CS2113T CS2101</code></p>
 </li>
 <li>
-<p>Persons matching at least one group tag will be returned (i.e. <code>OR</code> search). e.g. <code>CS2113T CS2101</code> will return persons with either <code>CS2101</code> or <code>CS2113T</code> tags</p>
+<p>Persons matching at least one group will be returned (i.e. <code>OR</code> search). e.g. <code>CS2113T CS2101</code> will return persons with in either <code>CS2101</code> or <code>CS2113T</code> groups</p>
 </li>
 </ul>
 </div>
@@ -580,11 +579,11 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <ul>
 <li>
 <p><code>group CS2101</code><br>
-Filters both the others list and the friends list to show only users with the group tag "CS2101".</p>
+Filters both the others list and the friends list to show only users with the group "CS2101".</p>
 </li>
 <li>
 <p><code>group CS2101 CS2113T</code><br>
-Filters both the others list and the friends list to show only users with both group tags "CS2101" and "CS2113T".</p>
+Filters both the others list and the friends list to show only users with both group "CS2101" and "CS2113T".</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -597,7 +596,7 @@ Filters both the others list and the friends list to show only users with both g
 </div>
 </li>
 <li>
-<p>After executing <code>group CS2113T</code>, all the users with the tag <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
+<p>After executing <code>group CS2113T</code>, all the users with the group <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/TagCommandExecutedPS.png" alt="TagCommandExecutedPS" width="790">
@@ -1258,73 +1257,4 @@ There is no need to save manually.</p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-<li>
-<p><strong>Tag</strong> : <code>tag TAGNAME [MORE_TAGNAMES]</code><br>
-e.g <code>tag CS2101</code></p>
-</li>
-<li>
-<p><strong>Friend</strong> : <code>friend INDEX</code><br>
-e.g.<code>friend 2</code></p>
-</li>
-<li>
-<p><strong>Unfriend</strong> : <code>unfriend INDEX</code><br>
-e.g.<code>unfriend 2</code></p>
-</li>
-<li>
-<p><strong>Add timeslot</strong> : <code>addtime</code><br>
-e.g. <code>addtime mon 10-12</code></p>
-</li>
-<li>
-<p><strong>Delete timeslot</strong> : <code>deletetime</code><br>
-e.g. <code>deletetime tue 12-14</code></p>
-</li>
-<li>
-<p><strong>Free time</strong> : <code>free</code><br>
-e.g. <code>free 1 2 3</code></p>
-</li>
-<li>
-<p><strong>Import Timetable from a file</strong> : <code>import [FILE_LOCATION]</code></p>
-</li>
-<li>
-<p><strong>Export Timetable to a file</strong> : <code>export [FILE_LOCATION]</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 18:51:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 19:10:41 UTC</div></div></div></body></html>

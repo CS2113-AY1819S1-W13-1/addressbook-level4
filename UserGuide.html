@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>FreeTime - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Timetable Deconflicter (TBC)</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>FreeTime - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">FreeTime</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>FreeTime - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W13-1</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
@@ -27,8 +27,8 @@
 <li><a href="#edit">4.3. Editing a person : <code>edit</code> (<code>e</code>)</a></li>
 <li><a href="#find">4.4. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
 <li><a href="#group">4.5. Locating persons by group : <code>group</code> (<code>t</code>)</a></li>
-<li><a href="#addtime">4.6. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></li>
-<li><a href="#deletetime">4.7. Delete a timeslot from your timetable: <code>deletetime</code> (<code>dt</code>)</a></li>
+<li><a href="#addtime">4.6. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></li>
+<li><a href="#deletetime">4.7. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></li>
 <li><a href="#select">4.8. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
 <li><a href="#friend">4.9. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></li>
 <li><a href="#unfriend">4.10. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></li>
@@ -630,12 +630,12 @@ Use the command <code>listall</code> to revert the panels back to its original s
 </div>
 </div>
 <div class="sect2">
-<h3 id="addtime"><a class="link" href="#addtime">4.6. Add a timeslot to your timetable: <code>addtime</code> (<code>at</code>)</a></h3>
+<h3 id="addtime"><a class="link" href="#addtime">4.6. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></h3>
 <div class="paragraph">
 <p>Adds a timeslot to your timetable.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addtime Monday 10:00-12:30</code></p>
+<p>Format: <code>add Monday 10:00-12:30</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -648,7 +648,7 @@ Use the command <code>listall</code> to revert the panels back to its original s
 <p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
 </li>
 <li>
-<p>You cannot add a timeslot that clashes with your timetable.</p>
+<p>You cannot add a timeslot that clashes with your current timetable.</p>
 </li>
 </ul>
 </div>
@@ -660,15 +660,15 @@ Use the command <code>listall</code> to revert the panels back to its original s
 <div class="ulist">
 <ul>
 <li>
-<p><code>addtime Monday 10:00-12:30</code><br>
+<p><code>add Monday 10:00-12:30</code><br>
 Adds the timeslot from 10:00 to 12:30 on Monday to your timetable.</p>
 </li>
 <li>
-<p><code>addtime Fri 13:30-14:00</code><br>
+<p><code>add Fri 13:30-14:00</code><br>
 Adds the timeslot from 13:30 to 14:00 on Friday to your timetable.</p>
 </li>
 <li>
-<p><code>addtime Wed 17-18</code><br>
+<p><code>add Wed 17-18</code><br>
 Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 </li>
 </ul>
@@ -687,12 +687,12 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deletetime"><a class="link" href="#deletetime">4.7. Delete a timeslot from your timetable: <code>deletetime</code> (<code>dt</code>)</a></h3>
+<h3 id="deletetime"><a class="link" href="#deletetime">4.7. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></h3>
 <div class="paragraph">
-<p>Delete a timeslot from your timetable.</p>
+<p>Deletes a timeslot from your timetable.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deletetime Monday 10:00-12:30</code></p>
+<p>Format: <code>delete Monday 10:00-12:30</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -717,15 +717,15 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deletetime Monday 10:00-12:30</code><br>
+<p><code>delete Monday 10:00-12:30</code><br>
 Deletes the timeslot from 10:00 to 12:00 on Monday from your timetable.</p>
 </li>
 <li>
-<p><code>deletetime Fri 13:30-14:00</code><br>
+<p><code>delete Fri 13:30-14:00</code><br>
 Deletes the timeslot from 13:30 to 14:00 on Friday from your timetable.</p>
 </li>
 <li>
-<p><code>deletetime Wed 17-18</code><br>
+<p><code>delete Wed 17-18</code><br>
 Deletes the timeslot from 17:00 to 18:00 on Wednesday from your timetable.</p>
 </li>
 </ul>
@@ -1327,4 +1327,4 @@ e.g. <code>free 1 2 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 12:13:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 12:19:06 UTC</div></div></div></body></html>

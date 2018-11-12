@@ -149,7 +149,8 @@
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.1. Import Timetable : <code>import</code> (<code>im</code>)</a></h3>
 <div class="paragraph">
-<p>Use this command to import a timetable for the <strong>current user</strong> from a specified file.<br></p>
+<p>Use this command to import a timetable for the <strong>current user</strong> from a specified file.<br>
+See the example below for a quick start!<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import FILE_NAME</code><br></p>
@@ -158,9 +159,6 @@
 <div class="content">
 <div class="ulist">
 <ul>
-<li>
-<p>See the example below for a quick start!</p>
-</li>
 <li>
 <p>Command parameters:</p>
 <div class="ulist">
@@ -277,7 +275,8 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="sect2">
 <h3 id="export"><a class="link" href="#export">3.2. Export Timetable : <code>export</code> (<code>ex</code>)</a></h3>
 <div class="paragraph">
-<p>Use this command to export the <strong>currently-displayed</strong> timetable as an <em>.ics</em> file.</p>
+<p>Use this command to export the <strong>currently-displayed</strong> timetable as an <em>.ics</em> file.
+See the example below for a quick start!<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export FILE_NAME</code></p>
@@ -424,30 +423,10 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <p>The import and export timetable feature allows users to import and export their timetables from and to external applications as <em>.ics</em> files.</p>
 </div>
 <div class="paragraph">
-<p>The currently supported applications are:<br></p>
+<p>The Import command currently supports timetables from NUSMODS. [<a href="https://nusmods.com" class="bare">https://nusmods.com</a>] This makes it easy for existing users of NUSMODS to bring their timetables into FreeTime<br></p>
 </div>
 <div class="paragraph">
-<p>Import:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>NUSMODS [<a href="https://nusmods.com" class="bare">https://nusmods.com</a>]<br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Export:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>FreeTime (you can export a user&#8217;s timetable and then import it back in)</p>
-</li>
-<li>
-<p>Google Calendar (Preliminary support, untested: TimeSlots show up as individual events for 1 week.)</p>
-</li>
-</ul>
+<p>The Export command currently supports FreeTime. This makes it possible to make backups of your timetable, or to share it with other users of FreeTime.</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current implementation</a></h4>
@@ -478,10 +457,10 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>IcsUtil#readTimeTableFromFile()</code> - to read a <code>TimeTable</code> from an <em>.ics</em> file; accepts the <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+<p><code>IcsUtil#readTimeTableFromFile()</code> - to read a <code>TimeTable</code> from a specified <em>.ics</em> file on the disk<br></p>
 </li>
 <li>
-<p><code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+<p><code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to a specified location on the disk<br></p>
 </li>
 </ol>
 </div>
@@ -509,7 +488,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
+<img src="../images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram" width="800">
 </div>
 <div class="title">Figure 10. Interactions between the various Components for the Import Command</div>
 </div>
@@ -537,7 +516,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
+<img src="../images/ExportSequenceDiagram.png" alt="ExportSequenceDiagram" width="800">
 </div>
 <div class="title">Figure 11. Interactions between the various Components for the <code>export</code> Command</div>
 </div>
@@ -580,7 +559,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2 (Go through the <a href="#Design-Storage"><strong><code>Storage</code></strong></a> subsystem):</strong> Follow the existing IO implementation of the other files: <code>addressbook.xml</code> and <code>preferences.json</code>; create an IcsTimeTableStorage class to access the ics file in hard disk.</p>
+<p><strong>Alternative 2 (Go through the <a href="#Design-Storage"><strong><code>Storage</code></strong></a> subsystem):</strong> Follow the existing IO implementation of <code>addressbook.xml</code>; create an IcsTimeTableStorage class to access the ics file in hard disk.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -601,7 +580,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <p>Increased dependency: LogicManager will then have increased dependency on Storage.</p>
 </li>
 <li>
-<p>More difficult to implement: Storage subsystem needs to be created on starting the app, whereas the import and export is ad-hoc.</p>
+<p>More difficult to implement: Storage subsystem needs to be created on starting the app, whereas the import and export commands are called  ad-hoc.</p>
 </li>
 </ul>
 </div>
@@ -615,13 +594,4 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-some-other-project"><a class="link" href="#project-some-other-project">5. PROJECT: &lt;some other project&gt;</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:28:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:07:16 UTC</div></div></div></body></html>

@@ -12,17 +12,23 @@
 <div class="paragraph">
 <p><em>FreeTime</em> is a desktop application targeted at students who have many projects that require meeting many people at different times.
 <em>FreeTime</em> aims to reduce the hassle of find available timeslots in which everyone is mutually available.
-This project is part of the deliverables for the following modules offered by the School of Computing in the National University of Singapore:<br></p>
+This project is part of the deliverables for the following modules offered by the School of Computing in the National University of Singapore:</p>
 </div>
-<div class="paragraph">
-<p><strong>CS2113T - Software Engineering and Object-Oriented Programming</strong><br>
-<strong>CS2101 - Communication for Computing Professionals</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CS2113T - Software Engineering and Object-Oriented Programming</strong></p>
+</li>
+<li>
+<p><strong>CS2101 - Communication for Computing Professionals</strong></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The user interacts with it using a Command Line Interface (CLI), and it has a Graphical User Interface (GUI) created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 <div class="paragraph">
-<p>This project portfolio shows my contributions to the project, which includes the learning the Java Programing Language.</p>
+<p>This project portfolio shows my contributions to the project, which includes the learning the Java Programing Language and JavaFX.</p>
 </div>
 </div>
 </div>
@@ -57,7 +63,7 @@ The implementation too was challenging as it required changes to the main logic 
 This is to enhance the search feature in the case where there are too many users in the database.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=cjinting-nus&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-05&amp;timeframe=day&amp;reverse=false&amp;repoSort=true"><strong>Code contributed</strong></a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -70,6 +76,9 @@ This is to enhance the search feature in the case where there are too many users
 <li>
 <p>Designed and updated the existing application icon and title.</p>
 </li>
+<li>
+<p>Added colors to group tags</p>
+</li>
 </ul>
 </div>
 </li>
@@ -78,7 +87,7 @@ This is to enhance the search feature in the case where there are too many users
 <div class="ulist">
 <ul>
 <li>
-<p>Ensured consistency in the UserGuide and DeveloperGuide.</p>
+<p>Ensured consistency in the UserGuide.</p>
 </li>
 </ul>
 </div>
@@ -104,7 +113,7 @@ This is to enhance the search feature in the case where there are too many users
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="group"><a class="link" href="#group">Locating persons by group : <code>group</code> (<code>t</code>)</a></h3>
+<h3 id="group"><a class="link" href="#group">Locating persons by group : <code>group</code> (<code>g</code>)</a></h3>
 <div class="paragraph">
 <p>Find persons whose groups match the specified groups.</p>
 </div>
@@ -115,6 +124,9 @@ This is to enhance the search feature in the case where there are too many users
 <div class="content">
 <div class="ulist">
 <ul>
+<li>
+<p>By default, FreeTime shows all the users that are using the application, on both the Friends and Others panel.</p>
+</li>
 <li>
 <p>The search is case sensitive. e.g <code>CS2101</code> will not match <code>cs2101</code></p>
 </li>
@@ -140,28 +152,9 @@ Filters both the others list and the friends list to show only users with the gr
 <li>
 <p><code>group CS2101 CS2113T</code><br>
 Filters both the others list and the friends list to show only users with both group "CS2101" and "CS2113T".</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>By default, FreeTime shows all the users that are using the application, on both the Friends and Others panel.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TagCommandDefaultFix.png" alt="TagCommandDefaultFix" width="790">
-</div>
-<div class="title">Figure 1. FreeTime before executing group command</div>
-</div>
 </li>
-<li>
-<p>After executing <code>group CS2113T</code>, all the users with the group <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TagCommandExecutedPS.png" alt="TagCommandExecutedPS" width="790">
+</ul>
 </div>
-<div class="title">Figure 2. FreeTime after executing group command</div>
-</div>
-</li>
-<li>
-<p>Commands such as <code>friend</code>, <code>unfriend</code>, <code>free</code>, <code>select</code> can now be used on the filtered list.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -173,12 +166,6 @@ Use the command <code>listall</code> to revert the panels back to its original s
 </td>
 </tr>
 </table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
@@ -243,7 +230,7 @@ Adds the first user in the others list to your list of friends.</p>
 <div class="content">
 <img src="../images/BeforeAddingFriendsPS.png" alt="BeforeAddingFriendsPS" width="600">
 </div>
-<div class="title">Figure 3. Before adding friend to your friend list.</div>
+<div class="title">Figure 1. Before adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -252,7 +239,7 @@ Adds the first user in the others list to your list of friends.</p>
 <div class="content">
 <img src="../images/AfterAddingFriendsPS.png" alt="AfterAddingFriendsPS" width="600">
 </div>
-<div class="title">Figure 4. After adding friend to your friend list.</div>
+<div class="title">Figure 2. After adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -305,7 +292,7 @@ Removes the first user from the friends list.</p>
 <div class="content">
 <img src="../images/BeforeRemovingFriendsPS.png" alt="BeforeRemovingFriendsPS" width="600">
 </div>
-<div class="title">Figure 5. Before removing friend from friend list.</div>
+<div class="title">Figure 3. Before removing friend from friend list.</div>
 </div>
 </li>
 <li>
@@ -314,7 +301,7 @@ Removes the first user from the friends list.</p>
 <div class="content">
 <img src="../images/AfterRemovingFriendsPS.png" alt="AfterRemovingFriendsPS" width="600">
 </div>
-<div class="title">Figure 6. After adding friend to your friend list.</div>
+<div class="title">Figure 4. After adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -345,166 +332,99 @@ Removes the first user from the friends list.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<h3 id="friend-feature"><a class="link" href="#friend-feature">Friend feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<h4 id="feature-description"><a class="link" href="#feature-description">Feature description</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-<div class="title">Figure 7. Interactions between the Logic Component and Model Component for the <code>undo</code> Command</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
-</div>
+<p>The friend feature allows users to befriend and add other users to their friend list.
+Timetables and personal information is only viewable for users in your friend list and timetables can only be deconflicted within your friends.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current implementation</a></h4>
+<div class="paragraph">
+<p>The feature is implemented with two main parts. The frontend and the backend, which will be explained below.</p>
+</div>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="frontend-implementation"><a class="link" href="#frontend-implementation">Frontend implementation</a></h5>
+<div class="paragraph">
+<p>On the left side users will now see two panes, one above for friends and one below for the rest of the users not inside the friend list.
+PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one and is nested inside a <code>Splitpane</code> in the <code>VBox</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FriendFeatureFrontEndDiagramFix.png" alt="FriendFeatureFrontEndDiagramFix" width="300">
+</div>
+<div class="title">Figure 5. Class diagram of Friend</div>
+</div>
+<div class="paragraph">
+<p>The two panels will be filtered based on two predicates, <code>FriendListPredicate</code> and <code>OtherListPredicate</code>.
+The friends of the current user is iterated through and those that belong to the friend will be shown on the FriendListPanel.
+The rest of the users will be shown on PersonListPanel. Both predicates will filter out the current user.
+When additional filtering commands such as <code>group</code> or <code>find</code> are executed, the predicate produce from either of the commands will be added to a new <code>CombinedFriendListPredicate</code> and <code>CombinedOtherListPredicate</code>.
+This creates a new predicate in which will filter the two panels accordingly.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation"><a class="link" href="#backend-implementation">Backend implementation</a></h5>
+<div class="paragraph">
+<p>The <code>User</code> is associated with a specific <code>Person</code>. Each person can have any number of <code>Friend</code> objects.
+Every friend will have a <code>Name</code> object that corresponds to the specific <code>Person</code> object in the list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FriendClassDiagram.png" alt="FriendClassDiagram" width="200">
+</div>
+<div class="title">Figure 6. Class diagram of Friend</div>
+</div>
+<div class="paragraph">
+<p>When the friend command is executed, the Person selected at the index will be added as a <code>Friend</code> to the current user.
+Likewise, the reverse will occur and the user will be added to the Person selected as a <code>Friend</code>.
+When the selected person logs in, he or she will see the user as a friend as well.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows the execution of the Friend command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FriendCommandSequenceDiagram.png" alt="FriendCommandSequenceDiagram" width="300">
+</div>
+<div class="title">Figure 7. Sequence diagram of friend command</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="how-to-store-the-friends-of-the-user"><a class="link" href="#how-to-store-the-friends-of-the-user">How to store the friends of the User</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Every Friend of the user has a name which matches a specific person in the database</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
+<p>Pros: Every friend only includes essential information about the specific person</p>
 </li>
 <li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
+<p>Cons: Takes longer to match the person in the friends list to a person in the database</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong>Alternative 2:</strong> Allowing every Friend to compose a Person object</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Friend contains more information that can be used</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: Duplicated entries of the same Person</p>
 </li>
 </ul>
 </div>
@@ -513,31 +433,31 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<h5 id="how-to-display-the-friends-and-others-of-the-current-user"><a class="link" href="#how-to-display-the-friends-and-others-of-the-current-user">How to display the friends and others of the current User</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use of predicates to set the list to reflect only the desired people.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Allow different predicates to be nested when more filtering commands are called. More dynamic filtering can be done.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: The list internally contains all the users of the database, extra information is being loaded.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<p><strong>Alternative 2:</strong> Send a list of all friends and non-friends at the start of the application to individual panels.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+<p>Pros: Correct users will be loaded at the start for each panel.</p>
 </li>
 <li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Cons: Friends panel and others panel have to be repopulated again after every friend/unfriend</p>
 </li>
 </ul>
 </div>
@@ -547,20 +467,5 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 02:32:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:28:50 UTC</div></div></div></body></html>

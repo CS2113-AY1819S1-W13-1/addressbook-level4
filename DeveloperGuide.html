@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Timetable Deconflicter (TBC) - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>FreeTime - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">FreeTime</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Timetable Deconflicter (TBC) - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">FreeTime</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>FreeTime - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W13-1</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
@@ -1244,29 +1244,13 @@ then salted and hashed (SHA-512), and finally compared to the stored hashed pass
 <h4 id="feature-description"><a class="link" href="#feature-description">3.5.1. Feature description</a></h4>
 <div class="paragraph">
 <p>The friend feature allows users to befriend and add other users to their friend list.
-Timetables are only viewable for users in your friend list and timetables can only be deconflicted within your friends.</p>
+Timetables and personal information is only viewable for users in your friend list and timetables can only be deconflicted within your friends.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.2. Current implementation</a></h4>
 <div class="paragraph">
 <p>The feature is implemented with two main parts. The frontend and the backend, which will be explained below.</p>
-</div>
-<div class="sect4">
-<h5 id="backend-implementation-2"><a class="link" href="#backend-implementation-2">Backend implementation</a></h5>
-<div class="paragraph">
-<p>The <code>User</code> is associated with a specific <code>Person</code>. Each person can have any number of <code>Friend</code> objects.
-Every friend will have a <code>Name</code> object that corresponds to the specific <code>Person</code> object in the list.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/FriendClassDiagram.png" alt="FriendClassDiagram" width="200">
-</div>
-<div class="title">Figure 20. Class diagram of Friend</div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
-</div>
 </div>
 <div class="sect4">
 <h5 id="frontend-implementation-3"><a class="link" href="#frontend-implementation-3">Frontend implementation</a></h5>
@@ -1278,7 +1262,44 @@ PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one
 <div class="content">
 <img src="images/FriendFeatureFrontEndDiagramFix.png" alt="FriendFeatureFrontEndDiagramFix" width="300">
 </div>
+<div class="title">Figure 20. Class diagram of Friend</div>
+</div>
+<div class="paragraph">
+<p>The two panels will be filtered based on two predicates, <code>FriendListPredicate</code> and <code>OtherListPredicate</code>.
+The friends of the current user is iterated through and those that belong to the friend will be shown on the FriendListPanel.
+The rest of the users will be shown on PersonListPanel. Both predicates will filter out the current user.
+When additional filtering commands such as <code>group</code> or <code>find</code> are executed, the predicate produce from either of the commands will be added to a new <code>CombinedFriendListPredicate</code> and <code>CombinedOtherListPredicate</code>.
+This creates a new predicate in which will filter the two panels accordingly.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-2"><a class="link" href="#backend-implementation-2">Backend implementation</a></h5>
+<div class="paragraph">
+<p>The <code>User</code> is associated with a specific <code>Person</code>. Each person can have any number of <code>Friend</code> objects.
+Every friend will have a <code>Name</code> object that corresponds to the specific <code>Person</code> object in the list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FriendClassDiagram.png" alt="FriendClassDiagram" width="200">
+</div>
 <div class="title">Figure 21. Class diagram of Friend</div>
+</div>
+<div class="paragraph">
+<p>When the friend command is executed, the Person selected at the index will be added as a <code>Friend</code> to the current user.
+Likewise, the reverse will occur and the user will be added to the Person selected as a <code>Friend</code>.
+When the selected person logs in, he or she will see the user as a friend as well.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows the execution of the Friend command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FriendCommandSequenceDiagram.png" alt="FriendCommandSequenceDiagram" width="300">
+</div>
+<div class="title">Figure 22. Sequence diagram of friend command</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
 </div>
 </div>
 <div class="sect4">
@@ -1311,6 +1332,39 @@ PersonListPanel is adapted to now have two <code>Stackpane</code> instead of one
 </li>
 <li>
 <p>Cons: Duplicated entries of the same Person</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="how-to-display-the-friends-and-others-of-the-current-user"><a class="link" href="#how-to-display-the-friends-and-others-of-the-current-user">How to display the friends and others of the current User</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use of predicates to set the list to reflect only the desired people.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allow different predicates to be nested when more filtering commands are called. More dynamic filtering can be done.</p>
+</li>
+<li>
+<p>Cons: The list internally contains all the users of the database, extra information is being loaded.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Send a list of all friends and non-friends at the start of the application to individual panels.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Correct users will be loaded at the start for each panel.</p>
+</li>
+<li>
+<p>Cons: Friends panel and others panel have to be repopulated again after every friend/unfriend</p>
 </li>
 </ul>
 </div>
@@ -1434,7 +1488,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 22. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 23. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2413,4 +2467,4 @@ Expected: The user&#8217;s timetable is imported from the .ics file and should b
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 02:32:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:28:50 UTC</div></div></div></body></html>

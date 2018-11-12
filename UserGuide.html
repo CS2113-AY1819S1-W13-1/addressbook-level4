@@ -24,16 +24,16 @@
 <ul class="sectlevel2">
 <li><a href="#help">4.1. Viewing help : <code>help</code> (<code>h</code>)</a></li>
 <li><a href="#list">4.2. Listing all persons : <code>listall</code> (<code>l</code>)</a></li>
-<li><a href="#edit">4.3. Editing a person : <code>edit</code> (<code>e</code>)</a></li>
+<li><a href="#edit">4.3. Editing a person : <code>edit</code> (<code>ed</code>)</a></li>
 <li><a href="#find">4.4. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
-<li><a href="#group">4.5. Locating persons by group : <code>group</code> (<code>t</code>)</a></li>
+<li><a href="#group">4.5. Locating persons by group : <code>group</code> (<code>g</code>)</a></li>
 <li><a href="#addtime">4.6. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></li>
 <li><a href="#deletetime">4.7. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></li>
 <li><a href="#select">4.8. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
 <li><a href="#friend">4.9. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></li>
 <li><a href="#unfriend">4.10. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></li>
-<li><a href="#free">4.11. Show free slots among selected people: <code>free</code></a></li>
-<li><a href="#history">4.12. Listing entered commands : <code>history</code> (<code>g</code>)</a></li>
+<li><a href="#free">4.11. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></li>
+<li><a href="#history">4.12. Listing entered commands : <code>history</code> (<code>hi</code>)</a></li>
 <li><a href="#undo">4.13. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
 <li><a href="#redo">4.14. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
 <li><a href="#clear">4.15. Clears your timetable : <code>clear</code> (<code>c</code>)</a></li>
@@ -316,6 +316,9 @@ to your timetable might be lost.
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section contains all of the features that are currently present in <em>FreeTime</em>. Feel free to click any one of the links to quickly jump to the feature!</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Overview of all the features in FreeTime</caption>
 <colgroup>
@@ -466,7 +469,7 @@ After filtering your results by executing commands such as <code>group</code> or
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit"><a class="link" href="#edit">4.3. Editing a person : <code>edit</code> (<code>e</code>)</a></h3>
+<h3 id="edit"><a class="link" href="#edit">4.3. Editing a person : <code>edit</code> (<code>ed</code>)</a></h3>
 <div class="paragraph">
 <p>Edits your information in the database.<br></p>
 </div>
@@ -548,7 +551,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="group"><a class="link" href="#group">4.5. Locating persons by group : <code>group</code> (<code>t</code>)</a></h3>
+<h3 id="group"><a class="link" href="#group">4.5. Locating persons by group : <code>group</code> (<code>g</code>)</a></h3>
 <div class="paragraph">
 <p>Find persons whose groups match the specified groups.</p>
 </div>
@@ -559,6 +562,9 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <div class="content">
 <div class="ulist">
 <ul>
+<li>
+<p>By default, FreeTime shows all the users that are using the application, on both the Friends and Others panel.</p>
+</li>
 <li>
 <p>The search is case sensitive. e.g <code>CS2101</code> will not match <code>cs2101</code></p>
 </li>
@@ -584,28 +590,9 @@ Filters both the others list and the friends list to show only users with the gr
 <li>
 <p><code>group CS2101 CS2113T</code><br>
 Filters both the others list and the friends list to show only users with both group "CS2101" and "CS2113T".</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>By default, FreeTime shows all the users that are using the application, on both the Friends and Others panel.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/TagCommandDefaultFix.png" alt="TagCommandDefaultFix" width="790">
-</div>
-<div class="title">Figure 7. FreeTime before executing group command</div>
-</div>
 </li>
-<li>
-<p>After executing <code>group CS2113T</code>, all the users with the group <code>CS2113T</code> will be filtered and shown on the respective panels.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/TagCommandExecutedPS.png" alt="TagCommandExecutedPS" width="790">
+</ul>
 </div>
-<div class="title">Figure 8. FreeTime after executing group command</div>
-</div>
-</li>
-<li>
-<p>Commands such as <code>friend</code>, <code>unfriend</code>, <code>free</code>, <code>select</code> can now be used on the filtered list.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -617,12 +604,6 @@ Use the command <code>listall</code> to revert the panels back to its original s
 </td>
 </tr>
 </table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
@@ -682,7 +663,7 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 <div class="content">
 <img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="800">
 </div>
-<div class="title">Figure 9. Timeslot added to your timetable</div>
+<div class="title">Figure 7. Timeslot added to your timetable</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
@@ -850,7 +831,7 @@ Adds the first user in the others list to your list of friends.</p>
 <div class="content">
 <img src="images/BeforeAddingFriendsPS.png" alt="BeforeAddingFriendsPS" width="600">
 </div>
-<div class="title">Figure 10. Before adding friend to your friend list.</div>
+<div class="title">Figure 8. Before adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -859,7 +840,7 @@ Adds the first user in the others list to your list of friends.</p>
 <div class="content">
 <img src="images/AfterAddingFriendsPS.png" alt="AfterAddingFriendsPS" width="600">
 </div>
-<div class="title">Figure 11. After adding friend to your friend list.</div>
+<div class="title">Figure 9. After adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -912,7 +893,7 @@ Removes the first user from the friends list.</p>
 <div class="content">
 <img src="images/BeforeRemovingFriendsPS.png" alt="BeforeRemovingFriendsPS" width="600">
 </div>
-<div class="title">Figure 12. Before removing friend from friend list.</div>
+<div class="title">Figure 10. Before removing friend from friend list.</div>
 </div>
 </li>
 <li>
@@ -921,7 +902,7 @@ Removes the first user from the friends list.</p>
 <div class="content">
 <img src="images/AfterRemovingFriendsPS.png" alt="AfterRemovingFriendsPS" width="600">
 </div>
-<div class="title">Figure 13. After adding friend to your friend list.</div>
+<div class="title">Figure 11. After adding friend to your friend list.</div>
 </div>
 </li>
 <li>
@@ -937,7 +918,7 @@ Removes the first user from the friends list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="free"><a class="link" href="#free">4.11. Show free slots among selected people: <code>free</code></a></h3>
+<h3 id="free"><a class="link" href="#free">4.11. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></h3>
 <div class="paragraph">
 <p>Highlights timeslots where you and everyone specified is free.</p>
 </div>
@@ -979,14 +960,14 @@ Highlights timeslots where you, friend 1, and friend 2, are all free to meet up.
 <div class="content">
 <img src="images/FreeTimeSuccess.png" alt="FreeTimeSuccess" width="800">
 </div>
-<div class="title">Figure 14. Timeslots highlighted in green are available while timeslots highlighted in red are unavailable.</div>
+<div class="title">Figure 12. Timeslots highlighted in green are available while timeslots highlighted in red are unavailable.</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="history"><a class="link" href="#history">4.12. Listing entered commands : <code>history</code> (<code>g</code>)</a></h3>
+<h3 id="history"><a class="link" href="#history">4.12. Listing entered commands : <code>history</code> (<code>hi</code>)</a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br></p>
 </div>
@@ -1263,4 +1244,4 @@ There is no need to save manually.</p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 02:32:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:28:50 UTC</div></div></div></body></html>

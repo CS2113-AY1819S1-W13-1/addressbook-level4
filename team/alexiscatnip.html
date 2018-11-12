@@ -16,10 +16,13 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>FreeTime is the product of my CS2113T project. In CS2113T, our team of 4 had to morph an existing application (AddressBook 4) into a different application, all the while ensuring the best coding practices and teamwork.</p>
+<p>FreeTime is the product of my CS2113T project, done at National University of Singapore. In CS2113T, our team of 4 had to morph an existing application (AddressBook 4) into a different application, all the while ensuring the best coding practices and teamwork.</p>
 </div>
 <div class="paragraph">
 <p>FreeTime is a Time-Planner application. It is primarily aimed at Students. The most unique feature about FreeTime is that it has the ability to quickly display the times when a group of friends are able to meet up.<br></p>
+</div>
+<div class="paragraph">
+<p>Users can import existing timetables into FreeTime, and then proceed to do changes to it, such as adding or removing a timeslot. When they are satisfied with their timetable, they can view the times when they and their friends are mutually free, using the <code>freetime</code> feature.</p>
 </div>
 <div class="paragraph">
 <p>The main interaction is through a command-line interface (CLI), but the graphical user interface (GUI) is also available. It is written in Java, and has about 10 kLoC.<br></p>
@@ -68,7 +71,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Allows the application to save the timetable into the disk automatically. This means that it can remmeber our users' timetables across restarts.</p>
+<p>What it does: Allows the application to save the timetable into the disk automatically. This means that it can remember our users' timetables across restarts.</p>
 </li>
 </ul>
 </div>
@@ -146,20 +149,64 @@
 <div class="sect2">
 <h3 id="import"><a class="link" href="#import">3.1. Import Timetable : <code>import</code> (<code>im</code>)</a></h3>
 <div class="paragraph">
-<p>Imports a timetable for the current user from a specified (<em>.ics</em>) file.<br></p>
+<p>Use this command to import a timetable for the <strong>current user</strong> from a specified file.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import FILE_NAME</code><br></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Only supports (<em>.ics</em>) files exported from NUSMODS.</p>
+<p>See the example below for a quick start!</p>
 </li>
 <li>
-<p>Do <strong>not</strong> include the (<em>.ics</em>) file extension when typing the command.</p>
+<p>Command parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FILE_NAME</code> refers to the name of the file that you want to import.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not include the <em>.ics</em> file extension when typing the command.</p>
 </li>
 <li>
-<p>The file will be imported from the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file. Please see the image below:<br></p>
+<p>In other words, type: <code>import nusmods_calendar</code> instead of <code>import nusmods_calendar.ics</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Compatibility:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Only supports <em>.ics</em> files exported from NUSMODS.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Location of the import file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The file will be imported from the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Please see the image below:<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -167,11 +214,9 @@
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="../images/UG_importexport.png" alt="UG importexport" width="400">
+<img src="../images/UG_import_directory.png" alt="UG import directory" width="500">
 </div>
-</div>
-<div class="paragraph">
-<p>Format: <code>import [FILE_NAME]</code><br></p>
+<div class="title">Figure 1. Location to put your import files.</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -179,53 +224,117 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>import my_file</code><br>
-Imports the timetable at <code>(root_folder)\import_export\my_file.ics</code><br>
-(where 'root_folder' is the folder that the application is in.)<br></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can obtain your timetable on NUSMODS as an (<em>.ics</em>) file, as shown in the picture below:
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock" style="text-align: left">
+<p><code>import nusmods_calendar</code><br>
+Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
+(where <code>.</code> represents the folder that the application is in.)</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download your file from NUDMODS website:</p>
+<div class="imageblock">
 <div class="content">
-<img src="../images/importics.png" alt="importics" width="250">
+<img src="../images/UG_import_step_1.png" alt="UG import step 1" width="790">
 </div>
+<div class="title">Figure 2. Download your file from NUDMODS website.</div>
+</div>
+</li>
+<li>
+<p>Copy your desired <em>.ics</em> file to the <code>import_export</code> folder:</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_import_step_2.png" alt="UG import step 2" width="790">
+</div>
+<div class="title">Figure 3. Copy your file to the correct folder.</div>
+</div>
+</li>
+<li>
+<p>Go back to FreeTime, and type in the command <code>import nusmods_calendar</code>  :</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_import_step_3.png" alt="UG import step 3" width="400">
+</div>
+<div class="title">Figure 4. Type this, then press enter!</div>
+</div>
+</li>
+<li>
+<p>If the import was successful, FreeTime should look similar to this  :</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_import_step_4.png" alt="UG import step 4" width="790">
+</div>
+<div class="title">Figure 5. Import Success! :)</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="export"><a class="link" href="#export">3.2. Export Timetable : <code>export</code> (<code>ex</code>)</a></h3>
 <div class="paragraph">
-<p>Exports the currently-displayed timetable to the specified (<em>.ics</em>) file.</p>
+<p>Use this command to export the <strong>currently-displayed</strong> timetable as an <em>.ics</em> file.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export FILE_NAME</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Your timetable will export as an (<em>.ics</em>) file. This file is currently only compatible with FreeTime.</p>
+<p>See the example below for a quick start!</p>
 </li>
 <li>
-<p>Do not include the (<em>.ics</em>) file extension when typing the command.</p>
+<p>Command parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FILE_NAME</code> refers to the name of the file that you want to export.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not include the <em>.ics</em> file extension when typing the command.</p>
 </li>
 <li>
-<p>Existing file with the same name will be overwritten. Use with care!</p>
+<p>In other words, type: <code>export my_timetable</code> instead of <code>export my_timetable.ics</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>The file will be imported to the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file. Please see the image below:</p>
+<p>Compatibility:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Can be imported back into FreeTime</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Location of the exported file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The file will be exported to the folder <code>import_export</code>, which is located in the same folder as the <code>FreeTime.jar</code> file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Please see the image below:<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -233,21 +342,60 @@ You can obtain your timetable on NUSMODS as an (<em>.ics</em>) file, as shown in
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="../images/UG_importexport.png" alt="UG importexport" width="400">
+<img src="../images/UG_export_directory.png" alt="UG export directory" width="500">
 </div>
-</div>
-<div class="paragraph">
-<p><strong>Format:</strong> <code>export [FILE_NAME]</code></p>
+<div class="title">Figure 6. Location of your exported files.</div>
 </div>
 <div class="paragraph">
-<p><strong>Example:</strong></p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>export my_file.ics</code><br>
-Exports the displayed timetable to <code>(root_folder)\import_export\my_file.ics</code><br>
-(where 'root_folder' is the folder that the application is in.)</p>
+<p><code>export my_timetable</code><br>
+Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code><br>
+(where <code>.</code> represents the folder that the application is in.)</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that the timetable you want to export is being shown:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>type <code>select me</code> to display your own timetable.</p>
+</li>
+<li>
+<p>type <code>select INDEX</code> to display one of your friend&#8217;s timetable.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_export_step_1.png" alt="UG export step 1" width="790">
+</div>
+<div class="title">Figure 7. Select the desired timetable.</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Type the command <code>export my_timetable</code>:</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_export_step_2.png" alt="UG export step 2" width="400">
+</div>
+<div class="title">Figure 8. Type the command.</div>
+</div>
+</li>
+<li>
+<p>If the export was successful, Your timetable should be waiting for you in the folder  :</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UG_export_step_3.png" alt="UG export step 3" width="400">
+</div>
+<div class="title">Figure 9. Exported file is in the import_export folder</div>
+</div>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -363,7 +511,7 @@ Exports the displayed timetable to <code>(root_folder)\import_export\my_file.ics
 <div class="content">
 <img src="../images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
 </div>
-<div class="title">Figure 1. Interactions between the various Components for the Import Command</div>
+<div class="title">Figure 10. Interactions between the various Components for the Import Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -391,10 +539,7 @@ Exports the displayed timetable to <code>(root_folder)\import_export\my_file.ics
 <div class="content">
 <img src="../images/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
 </div>
-<div class="title">Figure 2. Interactions between the various Components for the <code>export</code> Command</div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
+<div class="title">Figure 11. Interactions between the various Components for the <code>export</code> Command</div>
 </div>
 </div>
 </div>
@@ -479,4 +624,4 @@ Exports the displayed timetable to <code>(root_folder)\import_export\my_file.ics
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:28:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:51:39 UTC</div></div></div></body></html>

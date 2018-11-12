@@ -181,7 +181,8 @@ new users to use the application.</p>
 <h2 id="registering-and-logging-in"><a class="link" href="#registering-and-logging-in">Registering and Logging In</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The timetable content is locked, and it requires a user to either login with a pre-existing account, or register a new one.</p>
+<p>Whenever you open the application, the timetable content and commands are locked. You are required to either
+login with a pre-existing account, or register a new one.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -190,7 +191,7 @@ new users to use the application.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The application has a default user with username: <strong>test</strong> and password: <strong>test</strong>
+<em>FreeTime</em> has a default user with username: <strong>test</strong> and password: <strong>test</strong>
 </td>
 </tr>
 </table>
@@ -219,9 +220,9 @@ The application has a default user with username: <strong>test</strong> and pass
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/LoginPage.png" alt="LoginPage" width="790">
+<img src="../images/StartUpScreenFix.png" alt="StartUpScreenFix" width="790">
 </div>
-<div class="title">Figure 1. Login Page with Command Prompts</div>
+<div class="title">Figure 1. Login Page with Red Arrow pointing to where you should enter your commands</div>
 </div>
 <div class="paragraph">
 <p>At this page you will have to enter your credentials to log in. Only then would you be able to edit and view your own timetable,
@@ -241,13 +242,13 @@ having any friends.<br>
 </table>
 </div>
 <div class="paragraph">
-<p>The timetable that belongs to users that are not your friends will not be available to you, till you
+<p>The timetable that belongs to users that are not your friends will not be available for you to see, till you
 add them as friends.</p>
 </div>
 <div class="sect2">
 <h3 id="logging-in-code-login-code"><a class="link" href="#logging-in-code-login-code">Logging In: <code>login</code></a></h3>
 <div class="paragraph">
-<p>Command: <code>login [username] [password]</code></p>
+<p>Command: <code>login u/[username] pw/[password]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -255,11 +256,11 @@ add them as friends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>login test test</code><br>
+<p><code>login u/test pw/test</code><br>
 Logins with Username: test and Password: test</p>
 </li>
 <li>
-<p><code>login tim tam</code><br>
+<p><code>login u/tim pw/tam</code><br>
 Logins with Username: tim and Password: tam</p>
 </li>
 </ul>
@@ -271,8 +272,8 @@ Logins with Username: tim and Password: tam</p>
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Constraints:<br>
-* Username and Password must not contain any spaces
+You are required to to enter a password that contains more or equal to 8 characters.
+To ensure that your account is well-protected, do use a password that is not common.
 </td>
 </tr>
 </table>
@@ -281,7 +282,7 @@ Constraints:<br>
 <div class="sect2">
 <h3 id="registering-code-register-code"><a class="link" href="#registering-code-register-code">Registering: <code>register</code></a></h3>
 <div class="paragraph">
-<p>Command: <code>register [Username] [Password] [Email] [MobilePhone] [Address]</code></p>
+<p>Command: <code>register u/[Username] pw/[Password] e/[Email] p/[MobilePhone] a/[Address]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -289,20 +290,19 @@ Constraints:<br>
 <div class="ulist">
 <ul>
 <li>
-<p>register tim tam <a href="mailto:tim@tam.com">tim@tam.com</a> 88888888 Tammy</p>
+<p><code>register u/tim pw/tam e/tim@tam.com p/88888888 a/Tammy Road</code></p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock caution">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Constraints:<br>
-* Currently all fields must not have spaces too<br>
-* All fields must be entered
+Only the <code>Username</code> and <code>Password</code> fields are necessary, the others are optional and
+you are not required to enter them.
 </td>
 </tr>
 </table>
@@ -314,7 +314,7 @@ Constraints:<br>
 <p>Command: <code>ui</code></p>
 </div>
 <div class="paragraph">
-<p>Entering the command <code>ui</code> will have the Login Window to appear as seen from the figure 2.</p>
+<p>Entering the command <code>ui</code> will cause the Login Window to appear as seen in figure 4.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -323,7 +323,7 @@ Constraints:<br>
 <div class="title">Figure 2. Login UI</div>
 </div>
 <div class="paragraph">
-<p>Clicking on the Register button changes the pop up box to the Registration Window</p>
+<p>Clicking on the Register button changes your view to the Registration Window seen in figure 5.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -338,9 +338,8 @@ Constraints:<br>
 <p>Command: <code>logout</code></p>
 </div>
 <div class="paragraph">
-<p>To be able to use this command, you would have to be logged in in the first place. Referring to the figure 4, there is
-a logout button on the menu bar at the top of the application. Clicking on that would have the same effect as typing the
-command <code>logout</code>.</p>
+<p>To use this command, you would have to be logged in first. Typing <code>logout</code> as seen in figure 6
+return you back to the login page.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -476,4 +475,4 @@ then salted and hashed (SHA-512), and finally compared to the stored hashed pass
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:28:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:51:39 UTC</div></div></div></body></html>

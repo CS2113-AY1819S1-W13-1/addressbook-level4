@@ -139,7 +139,7 @@
 <div class="sect2">
 <h3 id="undo"><a class="link" href="#undo">Undoing previous command : <code>undo</code> (<code>u</code>)</a></h3>
 <div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br></p>
+<p>Restores <em>FreeTime</em> to the state before the previous <em>undoable</em> command was executed.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>undo</code></p>
@@ -152,7 +152,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>import</code>, <code>edit</code>, <code>addtime</code>, <code>deletetime</code>, <code>clear</code>).</p>
+<p>Undoable commands: <code>edit</code>, <code>add</code>, <code>delete</code>, <code>clear</code>, <code>import</code>.</p>
 </div>
 </td>
 </tr>
@@ -165,7 +165,6 @@
 <ul>
 <li>
 <p><code>import my_file</code><br>
-<code>list</code><br>
 <code>undo</code> (reverses the <code>import my_file</code> command)<br></p>
 </li>
 <li>
@@ -200,21 +199,21 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p><code>delete mon 8-10</code><br>
+<code>undo</code> (reverses the <code>delete mon 8-10</code> command)<br>
+<code>redo</code> (reapplies the <code>delete mon 8-10</code> command)<br></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete mon 8-10</code><br>
 <code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete mon 8-10</code><br>
 <code>clear</code><br>
 <code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>undo</code> (reverses the <code>delete mon 8-10</code> command)<br>
+<code>redo</code> (reapplies the <code>delete mon 8-10</code> command)<br>
 <code>redo</code> (reapplies the <code>clear</code> command)<br></p>
 </li>
 </ul>
@@ -457,4 +456,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:26:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:28:18 UTC</div></div></div></body></html>

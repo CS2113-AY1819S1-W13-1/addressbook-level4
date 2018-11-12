@@ -16,31 +16,30 @@
 <li><a href="#logging-in-code-login-code">3.1. Logging In: <code>login</code></a></li>
 <li><a href="#registering-code-register-code">3.2. Registering: <code>register</code></a></li>
 <li><a href="#showing-the-ui-interface-code-ui-code">3.3. Showing the UI Interface: <code>ui</code></a></li>
-<li><a href="#logging-out-code-logout-code">3.4. Logging Out : <code>logout</code></a></li>
-<li><a href="#closing-the-application-code-exit-code">3.5. Closing the Application : <code>exit</code></a></li>
 </ul>
 </li>
 <li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
 <li><a href="#help">4.1. Viewing help : <code>help</code> (<code>h</code>)</a></li>
-<li><a href="#list">4.2. Listing all persons : <code>listall</code> (<code>l</code>)</a></li>
-<li><a href="#edit">4.3. Editing a person : <code>edit</code> (<code>ed</code>)</a></li>
-<li><a href="#find">4.4. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
-<li><a href="#group">4.5. Locating persons by group : <code>group</code> (<code>g</code>)</a></li>
-<li><a href="#addtime">4.6. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></li>
-<li><a href="#deletetime">4.7. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></li>
+<li><a href="#edit">4.2. Editing a person : <code>edit</code> (<code>ed</code>)</a></li>
+<li><a href="#find">4.3. Locating persons by name : <code>find</code> (<code>f</code>)</a></li>
+<li><a href="#group">4.4. Locating persons by group : <code>group</code> (<code>g</code>)</a></li>
+<li><a href="#list">4.5. Listing all persons : <code>listall</code> (<code>l</code>)</a></li>
+<li><a href="#friend">4.6. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></li>
+<li><a href="#unfriend">4.7. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></li>
 <li><a href="#select">4.8. Selecting a person : <code>select</code> (<code>s</code>)</a></li>
-<li><a href="#friend">4.9. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></li>
-<li><a href="#unfriend">4.10. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></li>
-<li><a href="#free">4.11. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></li>
-<li><a href="#history">4.12. Listing entered commands : <code>history</code> (<code>hi</code>)</a></li>
-<li><a href="#undo">4.13. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
-<li><a href="#redo">4.14. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
-<li><a href="#clear">4.15. Clears your timetable : <code>clear</code> (<code>c</code>)</a></li>
-<li><a href="#import">4.16. Import Timetable : <code>import</code> (<code>im</code>)</a></li>
-<li><a href="#export">4.17. Export Timetable : <code>export</code> (<code>ex</code>)</a></li>
-<li><a href="#exit">4.18. Exiting the program : <code>exit</code> (<code>x</code>)</a></li>
-<li><a href="#saving-the-data">4.19. Saving the data</a></li>
+<li><a href="#add">4.9. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></li>
+<li><a href="#delete">4.10. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></li>
+<li><a href="#clear">4.11. Clears your timetable : <code>clear</code> (<code>c</code>)</a></li>
+<li><a href="#free">4.12. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></li>
+<li><a href="#import">4.13. Import Timetable : <code>import</code> (<code>im</code>)</a></li>
+<li><a href="#export">4.14. Export Timetable : <code>export</code> (<code>ex</code>)</a></li>
+<li><a href="#undo">4.15. Undoing previous command : <code>undo</code> (<code>u</code>)</a></li>
+<li><a href="#redo">4.16. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></li>
+<li><a href="#history">4.17. Listing entered commands : <code>history</code> (<code>hi</code>)</a></li>
+<li><a href="#logout">4.18. Logging Out : <code>logout</code> (<code>lo</code>)</a></li>
+<li><a href="#exit">4.19. Exiting the program : <code>exit</code> (<code>x</code>)</a></li>
+<li><a href="#saving-the-data">4.20. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -77,20 +76,19 @@
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 </li>
 <li>
-<p>You should be on the FreeTime&#8217;s login screen, as follows:</p>
+<p>You should see <em>FreeTime</em>'s login screen, as follows:</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/StartUpScreenFix.png" alt="StartUpScreenFix" width="790">
 </div>
-<div class="title">Figure 1. Window of FreeTime during first start-up</div>
+<div class="title">Figure 1. FreeTime&#8217;s login screen, shown when you first launch FreeTime</div>
 </div>
 </li>
 <li>
-<p>The command line is where the red arrow is pointed to in figure 1. You are to type your command
-here and press the <kbd>Enter</kbd> key to execute the command.</p>
+<p>The command line is indicated by the red arrow in the figure above. Type your commands here and press <kbd>Enter</kbd> to execute the command.</p>
 </li>
 <li>
-<p>If it is the first time you are using the app, follow the on-screen instructions to create your account and press <kbd>Enter</kbd> to execute it.<br></p>
+<p>If this is your first time using <em>FreeTime</em>, follow the on-screen instructions to create your account.<br></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
@@ -106,7 +104,7 @@ here and press the <kbd>Enter</kbd> key to execute the command.</p>
 </div>
 </li>
 <li>
-<p>After registering or logging in, you will be brought into <em>FreeTime</em>'s main screen</p>
+<p>After registering or logging in, you will be brought into <em>FreeTime</em>'s main screen.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/FreeTimeMainScreenFix.png" alt="FreeTimeMainScreenFix" width="790">
@@ -192,7 +190,7 @@ add them as friends.</p>
 <div class="sect2">
 <h3 id="logging-in-code-login-code"><a class="link" href="#logging-in-code-login-code">3.1. Logging In: <code>login</code></a></h3>
 <div class="paragraph">
-<p>Command: <code>login u/[username] pw/[password]</code></p>
+<p>Command: <code>login u/USERNAME pw/PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -276,44 +274,6 @@ you are not required to enter them.
 <div class="title">Figure 5. Registration UI</div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="logging-out-code-logout-code"><a class="link" href="#logging-out-code-logout-code">3.4. Logging Out : <code>logout</code></a></h3>
-<div class="paragraph">
-<p>Command: <code>logout</code></p>
-</div>
-<div class="paragraph">
-<p>To use this command, you would have to be logged in first. Typing <code>logout</code> as seen in figure 6
-return you back to the login page.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Logout.png" alt="Logout" width="790">
-</div>
-<div class="title">Figure 6. Logout Button Highlighted in Blue</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="closing-the-application-code-exit-code"><a class="link" href="#closing-the-application-code-exit-code">3.5. Closing the Application : <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Closes the <em>FreeTime</em> application.</p>
-</div>
-<div class="paragraph">
-<p>Command: <code>exit</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This command closes the application without logging you out. It is recommended to logout before doing this, or the changes
-to your timetable might be lost.
-</td>
-</tr>
-</table>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -336,76 +296,80 @@ to your timetable might be lost.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help">help</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help">help (h)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Opens the help window</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list">listall</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all the users in the database</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">edit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit">edit (ed)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edits your information in the database</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">find</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find">find (f)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filters the database based on the keywords specified</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#group">group</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#group">group (g)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filters the database based on the group tags specified</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addtime">addtime</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a timeslot to your timetable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list">listall (l)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all the users in the database</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deletetime">deletetime</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removes a timeslot from your timetable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#friend">friend (af)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a user to your friend list</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#select">select</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Selects a user in your friends list and shows their timetable</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#friend">friend</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a user from the others panel into your friend list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#unfriend">unfriend</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#unfriend">unfriend (uf)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Removes a friend from your friend list</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#free">free</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Highlights timeslots where you and everyone specified is free</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#select">select (s)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selects a user in your friends list and shows their timetable</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#history">history</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all the commands that you have entered in reverse chronological order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add">add (a)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a timeslot to your timetable</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#undo">undo</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Restores the address book to the state before the previous undoable command was executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete">delete (d)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes a timeslot from your timetable</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#redo">redo</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reverses the most recent undo command</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">clear</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">clear (c)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clears all timeslots from your timetable</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">import</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#free">free (fr)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Highlights timeslots where you and everyone specified is free</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#import">import (im)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Imports a timetable for the current user from a specified (.ics) file</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#export">export</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#export">export (ex)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exports the currently-displayed timetable to the specified (.ics) file</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit">exit</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Closes the <em>FreeTime</em> application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#undo">undo (u)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restores the address book to the state before the previous undoable command was executed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#redo">redo (r)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reverses the most recent undo command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#history">history (hi)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists all the commands that you have entered in reverse chronological order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#logout">logout (lo)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logs out of <em>FreeTime</em> and brings you back to the login screen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit">exit (x)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Closes <em>FreeTime</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -420,7 +384,7 @@ to your timetable might be lost.
 <p>Each command has an alias (given in round brackets after the command word) that can be used to replace the full command word. e.g. <code>find John</code> is equivaluent to <code>f John</code>.</p>
 </li>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>register n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>register n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>edit p/PHONE</code>, <code>PHONE</code> is a parameter which can be used as <code>edit p/12345678</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>[p/PHONE_NUMBER][g/GROUP]</code> can be used as <code>p/12345678 g/CS2101</code> or as <code>g/CS2101</code>.</p>
@@ -438,7 +402,7 @@ to your timetable might be lost.
 <div class="sect2">
 <h3 id="help"><a class="link" href="#help">4.1. Viewing help : <code>help</code> (<code>h</code>)</a></h3>
 <div class="paragraph">
-<p>Displays the userguide from within the app.</p>
+<p>Displays the User Guide from within the app.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
@@ -448,31 +412,7 @@ to your timetable might be lost.
 </div>
 </div>
 <div class="sect2">
-<h3 id="list"><a class="link" href="#list">4.2. Listing all persons : <code>listall</code> (<code>l</code>)</a></h3>
-<div class="paragraph">
-<p>Shows a list of all persons in the <em>FreeTime</em> application.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>listall</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-After filtering your results by executing commands such as <code>group</code> or <code>find</code>, executing <code>listall</code> will revert the list back to it&#8217;s initial state
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="edit"><a class="link" href="#edit">4.3. Editing a person : <code>edit</code> (<code>ed</code>)</a></h3>
+<h3 id="edit"><a class="link" href="#edit">4.2. Editing a person : <code>edit</code> (<code>ed</code>)</a></h3>
 <div class="paragraph">
 <p>Edits your information in the database.<br></p>
 </div>
@@ -487,13 +427,13 @@ After filtering your results by executing commands such as <code>group</code> or
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing groups, your existing groups will be removed i.e adding groups is not cumulative.</p>
+<p>When editing groups, your existing groups will be removed. i.e adding groups is not cumulative.</p>
 </li>
 <li>
 <p>You can remove all your groups by typing <code>g/</code> without specifying any groups after it.</p>
 </li>
 <li>
-<p>Groups should be alphanumeric (contains letters and numbers) and can contain hyphens "-" and underscores "_"</p>
+<p>Groups should be alphanumeric (contains letters and numbers), and can also contain hyphens "-" and underscores "_"</p>
 </li>
 </ul>
 </div>
@@ -504,7 +444,7 @@ After filtering your results by executing commands such as <code>group</code> or
 </div>
 </div>
 <div class="sect2">
-<h3 id="find"><a class="link" href="#find">4.4. Locating persons by name : <code>find</code> (<code>f</code>)</a></h3>
+<h3 id="find"><a class="link" href="#find">4.3. Locating persons by name : <code>find</code> (<code>f</code>)</a></h3>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br></p>
 </div>
@@ -554,7 +494,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="group"><a class="link" href="#group">4.5. Locating persons by group : <code>group</code> (<code>g</code>)</a></h3>
+<h3 id="group"><a class="link" href="#group">4.4. Locating persons by group : <code>group</code> (<code>g</code>)</a></h3>
 <div class="paragraph">
 <p>Find persons whose groups match the specified groups.</p>
 </div>
@@ -613,88 +553,67 @@ Use the command <code>listall</code> to revert the panels back to its original s
 </div>
 </div>
 <div class="sect2">
-<h3 id="addtime"><a class="link" href="#addtime">4.6. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></h3>
+<h3 id="list"><a class="link" href="#list">4.5. Listing all persons : <code>listall</code> (<code>l</code>)</a></h3>
 <div class="paragraph">
-<p>Adds a timeslot to your timetable.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add Monday 10:00-12:30</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><em>FreeTime</em> uses the 24-hour clock, so 01:00 means 1 am, not 1 pm!</p>
-</li>
-<li>
-<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of <code>Monday</code>.</p>
-</li>
-<li>
-<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
-</li>
-<li>
-<p>You cannot add a timeslot that clashes with your current timetable.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Shows a list of all persons in <em>FreeTime</em>.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Format: <code>listall</code></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add Monday 10:00-12:30</code><br>
-Adds the timeslot from 10:00 to 12:30 on Monday to your timetable.</p>
-</li>
-<li>
-<p><code>add Fri 13:30-14:00</code><br>
-Adds the timeslot from 13:30 to 14:00 on Friday to your timetable.</p>
-</li>
-<li>
-<p><code>add Wed 17-18</code><br>
-Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>After adding a timeslot, you should see the following:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="800">
-</div>
-<div class="title">Figure 7. Timeslot added to your timetable</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+After filtering your results by executing commands such as <code>group</code> or <code>find</code>, executing <code>listall</code> will revert the list back to it&#8217;s initial state
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deletetime"><a class="link" href="#deletetime">4.7. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></h3>
+<h3 id="friend"><a class="link" href="#friend">4.6. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></h3>
 <div class="paragraph">
-<p>Deletes a timeslot from your timetable.</p>
+<p>Adds a person from the others list to your friend list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete Monday 10:00-12:30</code></p>
+<p>Format: <code>friend INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Personal information of the user will be obscured until you have befriended them.</p>
+</li>
+<li>
+<p>Most commands in this application (like <code>free</code> and <code>select</code>) can only be executed only after adding someone to your friend list.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><em>FreeTime</em> uses the 24-hour clock, so 01:00 means 1 am, not 1 pm!</p>
+<p>You can only befriend someone who is in the others list.</p>
 </li>
 <li>
-<p>Shortforms for the day of the week are fine too. e.g. You can type <code>Mon</code> instead of <code>Monday</code>.</p>
-</li>
-<li>
-<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code></p>
-</li>
-<li>
-<p>You cannot delete a timeslot that is not already in your timetable.</p>
+<p>The indices <strong>must be positive integers</strong> <code>1, 2, 3, &#8230;&#8203;</code> and have to match someone on the others list</p>
 </li>
 </ul>
 </div>
@@ -706,16 +625,95 @@ Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete Monday 10:00-12:30</code><br>
-Deletes the timeslot from 10:00 to 12:00 on Monday from your timetable.</p>
+<p><code>friend 1</code><br>
+Adds the first user in the others list to your list of friends.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Before executing the command, your window might look like the following, without friends:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeAddingFriendsPS.png" alt="BeforeAddingFriendsPS" width="600">
+</div>
+<div class="title">Figure 6. Before adding friend to your friend list.</div>
+</div>
 </li>
 <li>
-<p><code>delete Fri 13:30-14:00</code><br>
-Deletes the timeslot from 13:30 to 14:00 on Friday from your timetable.</p>
+<p>After executing <code>friend 6</code>, there will be a success message and the first person should be added to the friend&#8217;s list, as follows:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterAddingFriendsPS.png" alt="AfterAddingFriendsPS" width="600">
+</div>
+<div class="title">Figure 7. After adding friend to your friend list.</div>
+</div>
 </li>
 <li>
-<p><code>delete Wed 17-18</code><br>
-Deletes the timeslot from 17:00 to 18:00 on Wednesday from your timetable.</p>
+<p>More information about the user is now shown and commands such as <code>free</code> and <code>select</code> can now be used.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unfriend"><a class="link" href="#unfriend">4.7. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></h3>
+<div class="paragraph">
+<p>Removes a person from your friend list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>unfriend INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can only unfriend someone who is in your friends list.</p>
+</li>
+<li>
+<p>The indices <strong>must be positive integers</strong> <code>1, 2, 3, &#8230;&#8203;</code> and have to match someone on the friends list</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>unfriend 1</code><br>
+Removes the first user from the friends list.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Before executing the command, look for the index of the person you would like to remove from your list:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeRemovingFriendsPS.png" alt="BeforeRemovingFriendsPS" width="600">
+</div>
+<div class="title">Figure 8. Before removing friend from friend list.</div>
+</div>
+</li>
+<li>
+<p>After executing <code>unfriend 1</code>, there will be a success message and the first person should be removed from the friend&#8217;s list, as follows:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterRemovingFriendsPS.png" alt="AfterRemovingFriendsPS" width="600">
+</div>
+<div class="title">Figure 9. After adding friend to your friend list.</div>
+</div>
+</li>
+<li>
+<p>More information about the user is now shown and commands such as <code>free</code> can now be used.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -776,43 +774,28 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="friend"><a class="link" href="#friend">4.9. Adding a person to your friend list : <code>friend</code> (<code>af</code>)</a></h3>
+<h3 id="add"><a class="link" href="#add">4.9. Add a timeslot to your timetable: <code>add</code> (<code>a</code>)</a></h3>
 <div class="paragraph">
-<p>Adds a person from the others list to your friend list.</p>
+<p>Adds a timeslot to your timetable.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>friend INDEX</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Personal information of the user will be obscured until you have befriended them.</p>
-</li>
-<li>
-<p>Most commands in this application (like <code>free</code> and <code>select</code>) can only be executed only after adding someone to your friend list.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
+<p>Format: <code>add Monday 10:00-12:30</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>You can only befriend someone who is in the others list.</p>
+<p><em>FreeTime</em> uses the 24-hour clock, so 01:00 means 1 am, not 1 pm!</p>
 </li>
 <li>
-<p>The indices <strong>must be positive integers</strong> <code>1, 2, 3, &#8230;&#8203;</code> and have to match someone on the others list</p>
+<p>Shortforms for the day of the week are fine too. e.g. you can type <code>Mon</code> instead of <code>Monday</code>.</p>
+</li>
+<li>
+<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code>.</p>
+</li>
+<li>
+<p>You cannot add a timeslot that clashes with your current timetable.</p>
 </li>
 </ul>
 </div>
@@ -824,95 +807,76 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>friend 1</code><br>
-Adds the first user in the others list to your list of friends.</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Before executing the command, your window might look like the following, without friends:</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/BeforeAddingFriendsPS.png" alt="BeforeAddingFriendsPS" width="600">
-</div>
-<div class="title">Figure 8. Before adding friend to your friend list.</div>
-</div>
+<p><code>add Monday 10:00-12:30</code><br>
+Adds the timeslot from 10:00 to 12:30 on Monday to your timetable.</p>
 </li>
 <li>
-<p>After executing <code>friend 6</code>, there will be a success message and the first person should be added to the friend&#8217;s list, as follows:</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/AfterAddingFriendsPS.png" alt="AfterAddingFriendsPS" width="600">
-</div>
-<div class="title">Figure 9. After adding friend to your friend list.</div>
-</div>
+<p><code>add Fri 13:30-14:00</code><br>
+Adds the timeslot from 13:30 to 14:00 on Friday to your timetable.</p>
 </li>
 <li>
-<p>More information about the user is now shown and commands such as <code>free</code> and <code>select</code> can now be used.</p>
-</li>
-</ol>
-</div>
+<p><code>add Wed 17-18</code><br>
+Adds the timeslot from 17:00 to 18:00 on Wednesday to your timetable.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>After adding a timeslot, you should see the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddTimeSuccess.png" alt="AddTimeSuccess" width="800">
+</div>
+<div class="title">Figure 10. Timeslot added to your timetable</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="unfriend"><a class="link" href="#unfriend">4.10. Removing a person from your friend list : <code>unfriend</code> (<code>uf</code>)</a></h3>
+<h3 id="delete"><a class="link" href="#delete">4.10. Delete a timeslot from your timetable: <code>delete</code> (<code>d</code>)</a></h3>
 <div class="paragraph">
-<p>Removes a person from your friend list.</p>
+<p>Deletes a timeslot from your timetable.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>unfriend INDEX</code></p>
+<p>Format: <code>delete Monday 10:00-12:30</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>You can only unfriend someone who is in your friends list.</p>
+<p><em>FreeTime</em> uses the 24-hour clock, so 01:00 means 1 am, not 1 pm!</p>
 </li>
 <li>
-<p>The indices <strong>must be positive integers</strong> <code>1, 2, 3, &#8230;&#8203;</code> and have to match someone on the friends list</p>
+<p>Shortforms for the day of the week are fine too. e.g. you can type <code>Mon</code> instead of <code>Monday</code>.</p>
+</li>
+<li>
+<p>If you type a single number, like <code>10</code> for either the start or end time, FreeTime will assume that you mean <code>10:00</code>.</p>
+</li>
+<li>
+<p>You cannot delete a timeslot that is not already in your timetable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>unfriend 1</code><br>
-Removes the first user from the friends list.</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Before executing the command, look for the index of the person you would like to remove from your list:</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/BeforeRemovingFriendsPS.png" alt="BeforeRemovingFriendsPS" width="600">
-</div>
-<div class="title">Figure 10. Before removing friend from friend list.</div>
-</div>
+<p><code>delete Monday 10:00-12:30</code><br>
+Deletes the timeslot from 10:00 to 12:00 on Monday from your timetable.</p>
 </li>
 <li>
-<p>After executing <code>unfriend 1</code>, there will be a success message and the first person should be removed from the friend&#8217;s list, as follows:</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/AfterRemovingFriendsPS.png" alt="AfterRemovingFriendsPS" width="600">
-</div>
-<div class="title">Figure 11. After adding friend to your friend list.</div>
-</div>
+<p><code>delete Fri 13:30-14:00</code><br>
+Deletes the timeslot from 13:30 to 14:00 on Friday from your timetable.</p>
 </li>
 <li>
-<p>More information about the user is now shown and commands such as <code>free</code> can now be used.</p>
-</li>
-</ol>
-</div>
+<p><code>delete Wed 17-18</code><br>
+Deletes the timeslot from 17:00 to 18:00 on Wednesday from your timetable.</p>
 </li>
 </ul>
 </div>
@@ -921,7 +885,19 @@ Removes the first user from the friends list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="free"><a class="link" href="#free">4.11. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></h3>
+<h3 id="clear"><a class="link" href="#clear">4.11. Clears your timetable : <code>clear</code> (<code>c</code>)</a></h3>
+<div class="paragraph">
+<p>Clears all timeslots from your timetable.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>clear</code></p>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="free"><a class="link" href="#free">4.12. Show free slots among selected people: <code>free</code> (<code>fr</code>)</a></h3>
 <div class="paragraph">
 <p>Highlights timeslots where you and everyone specified is free.</p>
 </div>
@@ -963,139 +939,14 @@ Highlights timeslots where you, friend 1, and friend 2, are all free to meet up.
 <div class="content">
 <img src="images/FreeTimeSuccess.png" alt="FreeTimeSuccess" width="800">
 </div>
-<div class="title">Figure 12. Timeslots highlighted in green are available while timeslots highlighted in red are unavailable.</div>
+<div class="title">Figure 11. Timeslots highlighted in green are available while timeslots highlighted in red are unavailable.</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="history"><a class="link" href="#history">4.12. Listing entered commands : <code>history</code> (<code>hi</code>)</a></h3>
-<div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>history</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undo"><a class="link" href="#undo">4.13. Undoing previous command : <code>undo</code> (<code>u</code>)</a></h3>
-<div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>undo</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>import</code>, <code>edit</code>, <code>addtime</code>, <code>deletetime</code>, <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>import my_file</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>import my_file</code> command)<br></p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>listall</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>import my_file</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>import my_file</code> command)<br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="redo"><a class="link" href="#redo">4.14. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></h3>
-<div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>redo</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clear"><a class="link" href="#clear">4.15. Clears your timetable : <code>clear</code> (<code>c</code>)</a></h3>
-<div class="paragraph">
-<p>Clears all timeslots from your timetable.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>clear</code></p>
-</div>
-<div class="paragraph">
-<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="import"><a class="link" href="#import">4.16. Import Timetable : <code>import</code> (<code>im</code>)</a></h3>
+<h3 id="import"><a class="link" href="#import">4.13. Import Timetable : <code>import</code> (<code>im</code>)</a></h3>
 <div class="paragraph">
 <p>Use this command to import a timetable for the <strong>current user</strong> from a specified file.<br></p>
 </div>
@@ -1164,7 +1015,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="content">
 <img src="images/UG_import_directory.png" alt="UG import directory" width="500">
 </div>
-<div class="title">Figure 13. Location to put your import files.</div>
+<div class="title">Figure 12. Location to put your import files.</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1183,7 +1034,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="content">
 <img src="images/UG_import_step_1.png" alt="UG import step 1" width="790">
 </div>
-<div class="title">Figure 14. Download your file from NUDMODS website.</div>
+<div class="title">Figure 13. Download your file from NUDMODS website.</div>
 </div>
 </li>
 <li>
@@ -1192,7 +1043,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="content">
 <img src="images/UG_import_step_2.png" alt="UG import step 2" width="790">
 </div>
-<div class="title">Figure 15. Copy your file to the correct folder.</div>
+<div class="title">Figure 14. Copy your file to the correct folder.</div>
 </div>
 </li>
 <li>
@@ -1201,7 +1052,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="content">
 <img src="images/UG_import_step_3.png" alt="UG import step 3" width="400">
 </div>
-<div class="title">Figure 16. Type this, then press enter!</div>
+<div class="title">Figure 15. Type this, then press enter!</div>
 </div>
 </li>
 <li>
@@ -1210,7 +1061,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="content">
 <img src="images/UG_import_step_4.png" alt="UG import step 4" width="790">
 </div>
-<div class="title">Figure 17. Import Success! :)</div>
+<div class="title">Figure 16. Import Success! :)</div>
 </div>
 <div class="paragraph">
 <p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
@@ -1223,7 +1074,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export"><a class="link" href="#export">4.17. Export Timetable : <code>export</code> (<code>ex</code>)</a></h3>
+<h3 id="export"><a class="link" href="#export">4.14. Export Timetable : <code>export</code> (<code>ex</code>)</a></h3>
 <div class="paragraph">
 <p>Use this command to export the <strong>currently-displayed</strong> timetable as an <em>.ics</em> file.</p>
 </div>
@@ -1292,7 +1143,7 @@ Imports the timetable from <code>.\import_export\nusmods_calendar.ics</code><br>
 <div class="content">
 <img src="images/UG_export_directory.png" alt="UG export directory" width="500">
 </div>
-<div class="title">Figure 18. Location of your exported files.</div>
+<div class="title">Figure 17. Location of your exported files.</div>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1318,7 +1169,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <div class="content">
 <img src="images/UG_export_step_1.png" alt="UG export step 1" width="790">
 </div>
-<div class="title">Figure 19. Select the desired timetable.</div>
+<div class="title">Figure 18. Select the desired timetable.</div>
 </div>
 </li>
 </ol>
@@ -1330,7 +1181,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <div class="content">
 <img src="images/UG_export_step_2.png" alt="UG export step 2" width="400">
 </div>
-<div class="title">Figure 20. Type the command.</div>
+<div class="title">Figure 19. Type the command.</div>
 </div>
 </li>
 <li>
@@ -1339,7 +1190,7 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 <div class="content">
 <img src="images/UG_export_step_3.png" alt="UG export step 3" width="400">
 </div>
-<div class="title">Figure 21. Exported file is in the import_export folder</div>
+<div class="title">Figure 20. Exported file is in the import_export folder</div>
 </div>
 </li>
 </ol>
@@ -1352,7 +1203,138 @@ Exports the displayed timetable to <code>.\import_export\my_timetable.ics</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exit"><a class="link" href="#exit">4.18. Exiting the program : <code>exit</code> (<code>x</code>)</a></h3>
+<h3 id="undo"><a class="link" href="#undo">4.15. Undoing previous command : <code>undo</code> (<code>u</code>)</a></h3>
+<div class="paragraph">
+<p>Restores <em>FreeTime</em> to the state before the previous <em>undoable</em> command was executed.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>undo</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: <code>edit</code>, <code>add</code>, <code>delete</code>, <code>clear</code>, <code>import</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>import my_file</code><br>
+<code>undo</code> (reverses the <code>import my_file</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>listall</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>import my_file</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>import my_file</code> command)<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redo"><a class="link" href="#redo">4.16. Redoing the previously undone command : <code>redo</code> (<code>r</code>)</a></h3>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete mon 8-10</code><br>
+<code>undo</code> (reverses the <code>delete mon 8-10</code> command)<br>
+<code>redo</code> (reapplies the <code>delete mon 8-10</code> command)<br></p>
+</li>
+<li>
+<p><code>delete mon 8-10</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete mon 8-10</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete mon 8-10</code> command)<br>
+<code>redo</code> (reapplies the <code>delete mon 8-10</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="history"><a class="link" href="#history">4.17. Listing entered commands : <code>history</code> (<code>hi</code>)</a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>history</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logout"><a class="link" href="#logout">4.18. Logging Out : <code>logout</code> (<code>lo</code>)</a></h3>
+<div class="paragraph">
+<p>Command: <code>logout</code></p>
+</div>
+<div class="paragraph">
+<p>To use this command, you would have to be logged in first. Typing <code>logout</code> as seen in the figure below
+return you back to the login page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Logout.png" alt="Logout" width="790">
+</div>
+<div class="title">Figure 21. Logout Button Highlighted in Blue</div>
+</div>
+<div class="paragraph">
+<p><a href="#Features">Jump back to <em>FreeTime</em>'s feature list</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">4.19. Exiting the program : <code>exit</code> (<code>x</code>)</a></h3>
 <div class="paragraph">
 <p>Closes the <em>FreeTime</em> application.</p>
 </div>
@@ -1376,7 +1358,7 @@ This command closes the application without logging you out. It is recommended t
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.19. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.20. Saving the data</a></h3>
 <div class="paragraph">
 <p>Application data is saved in the hard disk automatically, every time the data is changed.<br>
 There is no need to save manually.</p>
@@ -1389,7 +1371,7 @@ There is no need to save manually.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous <em>FreeTime</em> folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:26:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:28:17 UTC</div></div></div></body></html>

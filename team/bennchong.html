@@ -10,36 +10,33 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>FreeTime&#8482; is a security-enabled desktop application that is used for finding mutually availble slots between its users. This
-available slot will be displayed for the user to choose from, which will be reflected in his timetable using our FreeTime
+<p>FreeTime&#8482; is a security-enabled desktop application that is used for finding mutually available slots between its users. This
+available slot will be displayed for the user to choose from, which will be reflected in his timetable using our <em>FreeTime&#8217;s</em>
 Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
 <p>This project portfolio would be introducing you to my team that has developed this product in the span of a semester. In addition to giving you a brief general overview of this application
-feature, I would be going indepth into the details on how my own features are implemtented. This is to give you a deeper understanding of what contributions that I have done within this project,
-and hopefully you would perhaps also learn something along the way.</p>
+feature, I would be going in depth into the details on how my own features are implemented. This is to give you a deeper understanding of what contributions that I have done within this project,
+and hopefully you would perhaps too be interested in this project of mines.</p>
 </div>
 <div class="paragraph">
-<p>So sit tight, and let me tell you more about <em>FreeTime</em>.</p>
+<p>So sit tight, and let me tell you more about <em>FreeTime</em>, and how it will make scheduling meetings easier.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="freetime-features"><a class="link" href="#freetime-features">FreeTime&#8482; Features</a></h2>
+<h2 id="freetime-introduction"><a class="link" href="#freetime-introduction">FreeTime&#8482; Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In addition to essential security features such as login and registering, we have a clean, minimalistic landing page that is user-friendly.</p>
 </div>
 <div class="paragraph">
-<p>Users can import preexisting timetables that are taken from Google Calander or any other calander application that saves their data into the commonly used .ics format. This handy feature allows
-quick integraton for users coming from other timetable applications that do not have our main feature.</p>
+<p>Users can import preexisting timetables that are taken from Google Calender or any other calender application that saves their data into the commonly used .ics format. This handy feature allows
+quick integration for users coming from other timetable applications that lack <em>FreeTime</em>'s feature.</p>
 </div>
 <div class="paragraph">
-<p>On top of having friends to look at their timetable, Users are also grouped with groups according to what they specify. This is to easily select friends that are in the same group as you, which then sets the stage to find the mutually free slot among
+<p>On top of having friends to look at their timetable, users are also grouped with groups according to what they have inputted. This is to easily select friends that are in the same group as you, which then sets the stage to find the mutually free slot among
 this particular group of friends.</p>
-</div>
-<div class="paragraph">
-<p>Using the command <code>freetime</code>, you would be presented with a timetable that shows you what are your common free slots are. Thus you are freed from the painful moments of finding a common free slot in huge groups.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -48,10 +45,14 @@ this particular group of friends.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-More information below in User Guide
+You can be part of multiple groups, or none at all
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Using the command <code>freetime</code>, you would be presented with a timetable that shows you what are your common free slots are.
+Thus you are freed from the pains of finding a common free slot in huge groups.</p>
 </div>
 </div>
 </div>
@@ -67,7 +68,7 @@ More information below in User Guide
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to authenticate users</strong></p>
+<p><strong>Major enhancement</strong>: Added <strong>the ability to authenticate users</strong> within <em>FreeTime</em></p>
 <div class="ulist">
 <ul>
 <li>
@@ -78,22 +79,22 @@ More information below in User Guide
 Privacy levels are given to users to have control over what they feel comfortable sharing between strangers and friends.</p>
 </li>
 <li>
-<p>Highlights: Not only have I learnt how to implement features, I have to also consider the implications of having some
-of them implemented. For example, to have an extra level of security such as 2FA(Factor Authorization) step might seem beneficial,
-but does this application warrants the extra steps to log in? Not so in my opinion.</p>
+<p>Highlights: Implementing the above is not trivial as I had to rewrite how the commands are parsed and executed, which are
+then handled in SecurityManager. This is done on top of having to deal with new commands such as login, and restructuring
+old command into register. I had to understand and improve on all modules to make them to work together in this new sytem.</p>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Other than having the ability to add friends, you are now able to add groups since each users are differentiated from each other</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><strong>Minor enhancement</strong>: Used a hashing feature together with a salt to store user&#8217;s password</p>
+<p><strong>Minor enhancement</strong>: Used a hashing feature together with a salt to store user&#8217;s password in json format. This is to improve security by
+not storing users' password in plaintext, but encrypted securely.</p>
+</li>
+<li>
+<p><a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=bennchong"><strong>Code contributed</strong></a></p>
+</li>
+<li>
+<p><a href="https://github.com/CS2113-AY1819S1-W13-1/main/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Aclosed+author%3Abennchong"><strong>Pull Requests Made</strong></a></p>
 </li>
 <li>
 <p><strong>Project Overheads</strong></p>
@@ -104,7 +105,10 @@ but does this application warrants the extra steps to log in? Not so in my opini
 <div class="ulist">
 <ul>
 <li>
-<p>Contributed to releases <code>v1.0</code> - <code>v1.4</code> (4 releases) on GitHub</p>
+<p>Contributed to releases <code>v1.1</code> - <code>v1.4</code> (4 releases) on GitHub</p>
+</li>
+<li>
+<p><a href="https://github.com/CS2113-AY1819S1-W13-1/main/issues/24">Milestone issue tracker</a></p>
 </li>
 </ul>
 </div>
@@ -114,10 +118,10 @@ but does this application warrants the extra steps to log in? Not so in my opini
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Updated Storage Module to include AppUsersJson <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/63">#63</a></p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Changed AddressBookParser to accommodate Security Implementation <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/153">#153</a></p>
 </li>
 </ul>
 </div>
@@ -127,7 +131,7 @@ but does this application warrants the extra steps to log in? Not so in my opini
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated Screenshots in User Guide <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/192">#192</a></p>
 </li>
 </ul>
 </div>
@@ -137,16 +141,10 @@ but does this application warrants the extra steps to log in? Not so in my opini
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/64">#64</a>, <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/173">#173</a>,</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Fixed bugs in program <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/75">#75</a>, <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/185">#185</a>, <a href="https://github.com/CS2113-AY1819S1-W13-1/main/pull/186">#186</a></p>
 </li>
 </ul>
 </div>
@@ -246,7 +244,7 @@ having any friends.<br>
 add them as friends.</p>
 </div>
 <div class="sect2">
-<h3 id="logging-in-code-login-code"><a class="link" href="#logging-in-code-login-code">Logging In: <code>login</code></a></h3>
+<h3 id="logging-in-code-login-code-code-li-code"><a class="link" href="#logging-in-code-login-code-code-li-code">Logging In: <code>login</code> (<code>li</code>)</a></h3>
 <div class="paragraph">
 <p>Command: <code>login u/USERNAME pw/PASSWORD</code></p>
 </div>
@@ -280,7 +278,7 @@ To ensure that your account is well-protected, do use a password that is not com
 </div>
 </div>
 <div class="sect2">
-<h3 id="registering-code-register-code"><a class="link" href="#registering-code-register-code">Registering: <code>register</code></a></h3>
+<h3 id="registering-code-register-code-code-re-code"><a class="link" href="#registering-code-register-code-code-re-code">Registering: <code>register</code> (<code>re</code>)</a></h3>
 <div class="paragraph">
 <p>Command: <code>register u/[Username] pw/[Password] e/[Email] p/[MobilePhone] a/[Address]</code></p>
 </div>
@@ -309,7 +307,7 @@ you are not required to enter them.
 </div>
 </div>
 <div class="sect2">
-<h3 id="showing-the-ui-interface-code-ui-code"><a class="link" href="#showing-the-ui-interface-code-ui-code">Showing the UI Interface: <code>ui</code></a></h3>
+<h3 id="showing-the-ui-interface-code-ui-code"><a class="link" href="#showing-the-ui-interface-code-ui-code">Showing the UI Interface: (<code>ui</code>)</a></h3>
 <div class="paragraph">
 <p>Command: <code>ui</code></p>
 </div>
@@ -330,6 +328,22 @@ you are not required to enter them.
 <img src="../images/RegisterUI.png" alt="RegisterUI" width="790">
 </div>
 <div class="title">Figure 3. Registration UI</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logout"><a class="link" href="#logout">Logging Out : <code>logout</code> (<code>lo</code>)</a></h3>
+<div class="paragraph">
+<p>Command: <code>logout</code></p>
+</div>
+<div class="paragraph">
+<p>To use this command, you would have to be logged in first. Typing <code>logout</code> as seen in the figure below
+return you back to the login page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Logout.png" alt="Logout" width="790">
+</div>
+<div class="title">Figure 4. Logout Command entered into command line</div>
 </div>
 </div>
 </div>
@@ -357,33 +371,36 @@ of the methods, and might be working on extending the project.</p>
 <div class="content">
 <img src="../images/SecurityClassDiagram.png" alt="SecurityClassDiagram" width="800">
 </div>
-<div class="title">Figure 4. Structure of the Model Component</div>
+<div class="title">Figure 5. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/security/Security.java"><code>Security.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Security</code> component is an authentication module that ensures the users that are using the application are
-recognized, and an instance of a authenticated user will be created every time a user is logged in so as to allow
-the application to do user-specific tasks.</p>
+<p>The <code>Security</code> component is a module that ensures the users that are using the application are
+authenticated, and an instance of an authenticated user will be created and stored in <code>ModelManager</code> every time a user
+is logged in so as to allow the application to do user-specific tasks.</p>
 </div>
 <div class="paragraph">
-<p>The Sequence Diagram when a user logs in is given below:</p>
+<p>It also handles all the commands entered to check for security clearance. On top of that, it is able to hash passwords and
+save them into a file named users.json at root folder.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/SecurityLoginSequenceDiagram.png" alt="SecurityLoginSequenceDiagram" width="800">
+<div class="paragraph">
+<p>In Figure 9, AppUsers is  an object that stores the list of AccountCredentials. This object is created when <em>FreeTime</em>
+runs. Storage Component will try to find a user.json file to convert that into the AppUsers object. If the file is not found, or the data is corrupted,
+this program will create a new AppUsers object with default Users in it.</p>
 </div>
-<div class="title">Figure 5. Interactions between the UI Component and Security Component for the <code>login</code> Command</div>
+<div class="paragraph">
+<p>More information is detailed below in Security Implementation.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="security-implementation"><a class="link" href="#security-implementation">Security Implementation</a></h3>
 <div class="paragraph">
 <p>To begin this section, we would need to introduce the idea of a Authenticated User instance.
-Everytime a user successfully logs in, or creates a new account, the application will create an Authenticated User in
-Model. This User is an extension of the Person Class, which different UI and commands will access it. One example would
-be the friend&#8217;s UI panel, where it has to know the current user to know his friends</p>
+Whenever a user successfully logs in, or creates a new account, the application will create an Authenticated User in
+Model. This User is an extension of the Person Class, which different part of the UI and <code>SecurityManager</code> will access it. One example would
+be the friend&#8217;s UI panel, where <em>FreeTime</em> has to know the current user to display his friends</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
@@ -398,7 +415,7 @@ be the friend&#8217;s UI panel, where it has to know the current user to know hi
 <ol class="arabic">
 <li>
 <p>CLI<br>
-SecurityBox Class handles the command line interface, and passes every commands to
+CommandBox Class handles the command line interface, and passes every command to
 SecurityManager through the Security API.</p>
 </li>
 <li>
@@ -409,32 +426,125 @@ similar to above.<br></p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Whenever login or register is called through the Security API, this raises their respective Events to the event bus. The preexisting UIManager is subscribed
-to this events, and will react accordingly to the events raised.</p>
-</div>
+<hr>
 </div>
 <div class="sect4">
 <h5 id="back-end-implementation"><a class="link" href="#back-end-implementation">Back-End Implementation</a></h5>
 <div class="paragraph">
-<p>Users credentials are stored in a json file called users.json at root. The class managing the reading and writing of
-this file is JsonAppUserStorage.<br></p>
+<div class="title">Command Parsing</div>
+<p>The Sequence Diagram when a user enters a command is seen in the figure below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SecurityParseCommandsSD.png" alt="SecurityParseCommandsSD" width="800">
+</div>
+<div class="title">Figure 6. Interactions between the UI Component and Security Component for the login Command</div>
 </div>
 <div class="paragraph">
-<p>The object that it is storing is the AppUsers class implemented in the Security Package. It contains an array of
+<p><code>AuthReturn</code> is a enum type that contains the following definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>COMMAND_ALLOWED, COMMAND_LOGOUTFIRST, COMMAND_LOGINFIRST, COMMAND_ERROR;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above figure shows the sequence when the <code>AuthReturn</code> is <code>COMMAND_ALLOWED</code>. When it is not that, there will be an <code>SecurityAuthenticationException</code>
+thrown with the relevant message to the user.</p>
+</div>
+<div class="paragraph">
+<p><code>CommandsEnum</code> is another enum type that contains the method <code>iscommandAllowed()</code>. They are found in <code>seedu.addressbook.commons</code> package.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SecurityLoginSequenceDiagram.png" alt="SecurityLoginSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 7. Interactions between the UI Component and Security Component for the login Command</div>
+</div>
+<div class="paragraph">
+<p>The figure above shows the steps when login is called after Figure 19 has completed (since login is a command too).</p>
+</div>
+<div class="paragraph">
+<p>AppUsers contains an array of
 AccountCredentials, which has the attribute of Username and Password, and methods such isPasswordValid(). Here it also
-calls the static Hasher class, which takes the password and a salt to create the hash of the password to store.</p>
+calls the static Hasher class, which takes the password and a salt to create the hash of the password.</p>
 </div>
 <div class="paragraph">
-<p>Whenever a user logs in, the username is searched inside AppUsers. Once it matches the username, the input pasword is
-then salted and hashed (SHA-512), and finally compared to the stored hashed password.</p>
+<p>Whenever a user logs in, the username is searched from userList returned by AppUsers. Once it matches a username, the input pasword is
+then salted and hashed (SHA-512), and finally compared to the stored hashed password. A boolean is then returned to the
+SecurityManager.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-
+<div class="sect4">
+<h5 id="where-to-store-authenticated-user-object"><a class="link" href="#where-to-store-authenticated-user-object">Where to store Authenticated User object</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Inside of ModelManager</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All the methods in LogicManager can access User object</p>
+</li>
+<li>
+<p>Cons: The concept of an authenticated user object should be inside SecurityManager</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Inside of SecurityManager</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: ModelManager does not have security related objects inside it</p>
+</li>
+<li>
+<p>Cons: Logic and Model methods cannot access it</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="how-to-store-user-password-credentials"><a class="link" href="#how-to-store-user-password-credentials">How to store user password credentials</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> To encrypt with a hash function</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Password is protected</p>
+</li>
+<li>
+<p>Cons: There is a slight computational overhead and code complexity</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the plaintext password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less work to do</p>
+</li>
+<li>
+<p>Cons: Anyone who have access to the credential file can have access to all the application users</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:17:10 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:47:55 UTC</div></div></div></body></html>

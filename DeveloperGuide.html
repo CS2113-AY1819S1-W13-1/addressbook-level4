@@ -980,7 +980,7 @@ However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlo
 <div class="sect2">
 <h3 id="import-and-export-timetable-feature"><a class="link" href="#import-and-export-timetable-feature">3.3. Import and Export timetable feature</a></h3>
 <div class="paragraph">
-<p>The import and export timetable feature allows users to import and export their timetables from/to external applications as <em>.ics</em> files.</p>
+<p>The import and export timetable feature allows users to import and export their timetables from and to external applications as <em>.ics</em> files.</p>
 </div>
 <div class="paragraph">
 <p>The currently supported applications are:<br></p>
@@ -1001,10 +1001,10 @@ However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlo
 <div class="ulist">
 <ul>
 <li>
-<p>FreeTime (you export and then import it back in)</p>
+<p>FreeTime (you can export a user&#8217;s timetable and then import it back in)</p>
 </li>
 <li>
-<p>Google Calendar (Preliminary support: TimeSlots show up as individual events for 1 week.)</p>
+<p>Google Calendar (Preliminary support, untested: TimeSlots show up as individual events for 1 week.)</p>
 </li>
 </ul>
 </div>
@@ -1016,55 +1016,28 @@ However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The backend, which handles the reading and writing of <em>.ics</em> files, and the conversion between the <em>.ics</em> format and the TimeTable object.<br></p>
+<p>The frontend, which parses user input, and informs the user of success or failure.</p>
 </li>
 <li>
-<p>The frontend, which parses user input, and informs the user of success or failure.</p>
+<p>The backend, which handles the reading and writing of <em>.ics</em> files, and the conversion between the <em>.ics</em> format and the TimeTable object.<br></p>
 </li>
 </ol>
 </div>
 <div class="sect4">
-<h5 id="backend-implementation-import"><a class="link" href="#backend-implementation-import">Backend implementation - Import</a></h5>
+<h5 id="frontend-implementation-2"><a class="link" href="#frontend-implementation-2">Frontend implementation</a></h5>
 <div class="paragraph">
-<p>For import, the file is read from the disk using biweekly (3rd-party library), and then subsequently converted into a TimeTable by the IcsUtil class.</p>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the TimeTable is imported:<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
-</div>
-<div class="title">Figure 18. Interactions between the Logic Component and IcsUtil for the <code>import</code> Command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="backend-implementation-export"><a class="link" href="#backend-implementation-export">Backend implementation - Export</a></h5>
-<div class="paragraph">
-<p>For export, the TimeTable is converted into a iCalendar object by IcsUtil, and then written to disk as <em>.ics</em> file using biweekly (3rd-party library).</p>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the TimeTable is exported:<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ImportSequenceDiagrsssam.png" alt="ImportSequenceDiagrsssam" width="600">
-</div>
-<div class="title">Figure 19. Interactions between the Logic Component and IcsUtil for the <code>export</code> Command</div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
+<p>Similar to the other commands; see <a href="#Events-Driven-Nature"><strong><code>Events-Driven nature of the design</code></strong></a>.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="backend-implementation-icsutil-class"><a class="link" href="#backend-implementation-icsutil-class">Backend implementation - IcsUtil Class</a></h5>
 <div class="paragraph">
-<p>The <code>IcsUtil</code> class implements two key utility methods for handling <em>.ics</em> files:<br></p>
+<p>The <code>IcsUtil</code> class implements two public methods for handling <em>.ics</em> files:<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>IcsUtil#readTimeTableFromFile()</code> - to read an <code>Optional&lt;TimeTable&gt;</code> from an <em>.ics</em> file; accepts the <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
+<p><code>IcsUtil#readTimeTableFromFile()</code> - to read a <code>TimeTable</code> from an <em>.ics</em> file; accepts the <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
 </li>
 <li>
 <p><code>IcsUtil#saveTimeTableToFile()</code> - to write a <code>TimeTable</code> to disk; accepts the <code>TimeTable</code> and <code>filePath</code> of the <em>.ics</em> file as parameter<br></p>
@@ -1073,9 +1046,62 @@ However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlo
 </div>
 </div>
 <div class="sect4">
-<h5 id="frontend-implementation-2"><a class="link" href="#frontend-implementation-2">Frontend implementation</a></h5>
+<h5 id="backend-implementation-import"><a class="link" href="#backend-implementation-import">Backend implementation - Import</a></h5>
 <div class="paragraph">
-<p>Similar to the other commands; see <a href="#Events-Driven-Nature"><strong><code>Events-Driven nature of the design</code></strong></a>.</p>
+<p>The general implementation are as follows:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Biweekly</code>(external library) is used to obtain an <code>ICalendar</code> object, by reading the import file</p>
+</li>
+<li>
+<p>The <code>ICalendar</code> is converted to <code>TimeTable</code> by IcsUtil.</p>
+</li>
+<li>
+<p>Using this <code>TimeTable</code>, we can update the model.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the TimeTable is imported:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ImportSequenceDiagram.png" alt="ImportSequenceDiagram">
+</div>
+<div class="title">Figure 18. Interactions between the various Components for the Import Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="backend-implementation-export"><a class="link" href="#backend-implementation-export">Backend implementation - Export</a></h5>
+<div class="paragraph">
+<p>The general implementation are as follows:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The currently displayed <code>TimeTable</code> is obtained from model.</p>
+</li>
+<li>
+<p>the <code>TimeTable</code> is converted into an <code>ICalendar</code> by IcsUtil.</p>
+</li>
+<li>
+<p>The <code>ICalendar</code> is written to the file using <code>Biweekly</code>(external library).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the TimeTable is exported:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExportSequenceDiagram.png" alt="ExportSequenceDiagram">
+</div>
+<div class="title">Figure 19. Interactions between the various Components for the <code>export</code> Command</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
 </div>
 </div>
 </div>
@@ -1134,10 +1160,10 @@ However, <code>DeconflictTimeTable#addTimeSlot()</code> merges the <code>TimeSlo
 <div class="ulist">
 <ul>
 <li>
-<p>Increased dependency: LogicManager will then have dependency on Storage.</p>
+<p>Increased dependency: LogicManager will then have increased dependency on Storage.</p>
 </li>
 <li>
-<p>More difficult to implement: Current implementation of <a href="#Design-Storage"><strong><code>Storage</code></strong></a> does not favor 'on-demand' instantiation (as in the import and export command).</p>
+<p>More difficult to implement: Storage subsystem needs to be created on starting the app, whereas the import and export is ad-hoc.</p>
 </li>
 </ul>
 </div>
@@ -2387,4 +2413,4 @@ Expected: The user&#8217;s timetable is imported from the .ics file and should b
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 22:12:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 02:32:37 UTC</div></div></div></body></html>
